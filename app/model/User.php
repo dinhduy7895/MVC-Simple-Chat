@@ -1,6 +1,6 @@
 <?php
 class User extends Model{
-   
+
 
     function signup($data){
 
@@ -14,6 +14,7 @@ class User extends Model{
         $stmt->execute();
 
         if ($stmt->rowCount() == 0) {
+           
             $_SESSION['error'] = "username hoac mat khau khong dung";
             return false;
         } else {
@@ -70,6 +71,50 @@ class User extends Model{
                 
             }
         }
+    }
+    
+    function logout(){
+        $db = $this->getDb();
+        $sql = $db->prepare("UPDATE user SET status=0 WHERE id=?");
+        $sql->execute(array($_SESSION['id']));
+        session_destroy();
+    }
+    function show(){
+        $db = $this->getDb();
+        $sql = $db->prepare("SELECT user.* FROM user  WHERE id=?");
+        $sql->execute(array($_SESSION['id']));
+        return $sql->fetch();
+    }
+    function find($id){
+        $db = $this->getDb();
+        $sql = $db->prepare("SELECT user.* FROM user  WHERE id=?");
+        $sql->execute(array($_SESSION['id']));
+        return $sql->fetch();
+    }
+    function update($data){
+        $db = $this->getDb();
+
+        $username = $data['username'];
+        $pass = $data['pass'];
+        $sql = "UPDATE  user SET username=?, password = ? WHERE id = ?";
+        $stmt = $db->prepare($sql);
+        if( $stmt->execute(array($username,$pass,$_SESSION['id'])) == false ){
+            $_SESSION['error'] = "update khong hop le";
+            return false;
+        }
+       return true;
+    }
+    function changeAvatar($data){
+        $db = $this->getDb();
+        $image = $data['image']['name'];
+        Image::upload($_FILES['image']);
+        $sql = $db->prepare("UPDATE user SET avatar=? WHERE id=?");
+        if($sql->execute(array($image,$_SESSION['id'])) == false ){
+            $_SESSION['error'] = "Update Avatar khong hop le";
+            return false;
+        }
+        $_SESSION['avatar'] = $image;
+       return true;
     }
 
 }

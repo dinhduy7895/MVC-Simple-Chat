@@ -50,45 +50,5 @@ class Chat extends Model
         return $r;
     }
 
-    function loadMessageDirect($id){
-        $db = $this->getDb();
-        $sql = $db->prepare("SELECT id FROM user_user WHERE (sender = ? and receiver = ?) OR (sender = ? and receiver = ?)");
-        $sql->execute(array($id,$_SESSION['id'],$_SESSION['id'],$id));
-        $row = $sql->fetch();
-        $id = $row['id'];
-        $sql = $db->prepare("SELECT username,avatar, chat_user.* FROM chat_user, user WHERE chat_user.user_user_id =? AND chat_user.sender = user.username ORDER by id ASC ");
-        $sql->execute(array($id));
-        $r = $sql->fetchAll();
-        return $r;
-    }
-
-    function loadMessageRoom($id){
-        $db = $this->getDb();
-        $sql = $db->prepare("SELECT username,avatar, chat_room.* FROM chat_room, user WHERE chat_room.room_id =? AND chat_room.sender = user.username ORDER by id ASC ");
-        $sql->execute(array($id));
-        $r = $sql->fetchAll();
-        return $r;
-    }
     
-    function postRoom($id,$data){
-        $db = $this->getDb();
-        $msg = $data['msg'];
-        if ($msg != "") {
-            $sql = $db->prepare("INSERT INTO chat_room (sender,message,posted,room_id) VALUES (?,?,NOW(),?)");
-            $sql->execute(array($_SESSION['user'], $msg,$id));
-        }
-    }
-
-    function postDirect($id,$data){
-        $db = $this->getDb();
-        $sql = $db->prepare("SELECT id FROM user_user WHERE (sender = ? and receiver = ?) OR (sender = ? and receiver = ?)");
-        $sql->execute(array($id,$_SESSION['id'],$_SESSION['id'],$id));
-        $row = $sql->fetch();
-        $id = $row['id'];
-        $msg = $data['msg'];
-        if ($msg != "") {
-            $sql = $db->prepare("INSERT INTO chat_user (sender,message,posted,user_user_id) VALUES (?,?,NOW(),?)");
-            $sql->execute(array($_SESSION['user'], $msg,$id));
-        }
-    }
 }

@@ -29,7 +29,7 @@
 <div id="myDropdown" class="container dropdown-content">
     <div class="wrapper-arrow">
         <i class="fa fa-sign-out" aria-hidden="true"></i>
-        <a href="logout.php">Log Out</a>
+        <a href="<?php echo URL.'?ctl=User&act=logout'; ?>">Log Out</a>
     </div>
     <div class="wrapper-arrow">
         <i class="fa fa-upload" aria-hidden="true"></i>

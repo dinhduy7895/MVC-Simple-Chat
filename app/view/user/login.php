@@ -19,9 +19,9 @@
         <div class="card">
             <h1 class="title">Login</h1>
             <?php
-            if (isset($_SESSION['mess'])) {
-                echo "<h1>" . $_SESSION['mess'] . "</h1>";
-                unset($_SESSION['mess']);
+            if (isset($_SESSION['error'])) {
+                echo "<h1>" . $_SESSION['error'] . "</h1>";
+                unset($_SESSION['error']);
             }
             ?>
             <form action=<?php echo URL.'?ctl=User&act=signup'; ?> method="post">

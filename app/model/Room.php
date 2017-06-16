@@ -27,4 +27,21 @@ class Room extends  Model{
         $sql->execute(array($id));
         return $sql->fetch();
     }
+
+    function loadMessageRoom($id){
+        $db = $this->getDb();
+        $sql = $db->prepare("SELECT username,avatar, chat_room.* FROM chat_room, user WHERE chat_room.room_id =? AND chat_room.sender = user.username ORDER by id ASC ");
+        $sql->execute(array($id));
+        $r = $sql->fetchAll();
+        return $r;
+    }
+    function postRoom($id,$data){
+        $db = $this->getDb();
+        $msg = $data['msg'];
+        if ($msg != "") {
+            $sql = $db->prepare("INSERT INTO chat_room (sender,message,posted,room_id) VALUES (?,?,NOW(),?)");
+            $sql->execute(array($_SESSION['user'], $msg,$id));
+        }
+    }
+    
 }

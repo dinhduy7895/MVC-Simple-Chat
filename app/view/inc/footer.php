@@ -9,7 +9,7 @@
                 <h4 class="modal-title">Please Choose New Avataer</h4>
             </div>
             <div class="modal-body">
-                <form action="upload.php" method="post" enctype="multipart/form-data">
+                <form action="<?php echo URL.'?ctl=User&act=changeAvatar' ?>" method="post" enctype="multipart/form-data">
                     <input id="file-0" class="file" name="image" type="file" multiple data-min-file-count="1">
                     <br>
 
