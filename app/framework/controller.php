@@ -14,5 +14,11 @@ class  Controller{
     function getDb(){
         return $this->db;
     }
+    function render(){
+        $chat = new Chat($this->getDb());
+        $chat->refreshUser();
+        $this->userLists = $chat->loadUserOnline();
+        $this->roomLists = $chat->loadRoomAvailable($_SESSION['id']);
+    }
 
 }

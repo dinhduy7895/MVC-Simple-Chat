@@ -1,3 +1,6 @@
+<form id="msg_form">
+    <input class="textarea" type="text" placeholder="Type here!"/>
+</form>
 </div>
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -25,27 +28,13 @@
 </div>
 </div>
 </div>
-<script src="plugin/jquery-3.2.1.min.js"></script>
 <script src="plugin/chat.js"></script>
 <script src="plugin/fileinput.js" type="text/javascript"></script>
 <script src="plugin/bootstrap.min.js"></script>
 
 <script>
 
-    $("#myDropdown").hide();
-    $(".show-status").on("mousedown", function () {
-        if ($("#myDropdown").css("display") == 'none') {
-            $("#myDropdown").slideDown("slow");
-            $(".list-users").hide(300);
-        }
-        else {
-            $("#myDropdown").hide(300);
-            $(".list-users").slideDown("slow");
-        }
-
-    });
-
-
+  
 </script>
 </body>
 </html>

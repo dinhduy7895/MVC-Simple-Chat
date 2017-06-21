@@ -3,17 +3,21 @@
     width: 100%;
     padding: 0;
 }
-.users, .chatbox{
+.users, .chatbox {
     padding: 0px;
     height: 100vh;
 }
+.chatbox-wrapper{
+    height: 92vh;
+}
+
 .users {
     background-color: #04436a;
     color: rgba(255,255,255,0.6);
 }
 .msgs{
     overflow-y:auto;
-    height: 89%     ;
+    height: 99%     ;
 }
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
@@ -377,4 +381,14 @@ footer{
 }
 .current{
     background-color: rgba(255, 251, 248, 0.23);
+}
+.add-room {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.online span{
+    color: #4cae4c;
+}
+.offline span{
+    color:#a0a0a0;
 }

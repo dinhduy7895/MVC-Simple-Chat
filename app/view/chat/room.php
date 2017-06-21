@@ -10,6 +10,3 @@
         else         require APP.'view/room/message.php';
     ?>
 </ol>
-<form id="msg_form">
-    <input class="textarea" type="text" placeholder="Type here!"/></div>
-</form>

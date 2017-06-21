@@ -7,7 +7,7 @@
     <link href="css/chat.css" rel="stylesheet"/>
     <link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
     <link href="css/style.css" rel="stylesheet"/>
-
+    <script src="plugin/jquery-3.2.1.min.js"></script>
     <title>PHP Group Chat With jQuery & AJAX</title>
 </head>
 <body>
@@ -34,6 +34,10 @@
     <div class="wrapper-arrow">
         <i class="fa fa-upload" aria-hidden="true"></i>
         <a data-toggle="modal" data-target="#myModal">Upload Avatar</a>
+    </div>
+    <div class="wrapper-arrow">
+        <i class="fa fa-upload" aria-hidden="true"></i>
+        <a data-toggle="modal"  href="<?php echo URL.'?ctl=User&act=show';?>">Information</a>
     </div>
 </div>
 <div class="container list-users">

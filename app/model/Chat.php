@@ -2,8 +2,6 @@
 
 class Chat extends Model
 {
-   
-
     function refreshUser()
     {
         $db = $this->getDb();
@@ -22,23 +20,22 @@ class Chat extends Model
                 $stmt = $db->prepare("UPDATE user SET status=0 WHERE id=?");
                 $stmt->execute(array($r['id']));
             }
-
         }
 
     }
 
-    function loadUserOnline(){
+    function loadUserOnline()
+    {
         $db = $this->getDb();
-
         $sql = $db->prepare("SELECT id, status, username FROM user");
         $sql->execute();
         $r = $sql->fetchAll();
-        
         return $r;
 
     }
 
-    function loadRoomAvailable($id){
+    function loadRoomAvailable($id)
+    {
         $db = $this->getDb();
         $sql = $db->prepare("SELECT room.id, room.name FROM room 
                             INNER JOIN user_room 
@@ -46,9 +43,6 @@ class Chat extends Model
                             WHERE user_room.user_id = ?");
         $sql->execute(array($id));
         $r = $sql->fetchAll();
-        
         return $r;
     }
-
-    
 }

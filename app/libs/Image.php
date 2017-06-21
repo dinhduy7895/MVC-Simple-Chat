@@ -14,7 +14,6 @@ class Image {
     }
     public static  function getImage($image) {
         $link =  CLIENT."img/" . $image;
-
         if (file_exists($link)) {
             return PATH.'img/'.$image;
         } else

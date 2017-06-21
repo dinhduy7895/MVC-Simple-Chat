@@ -4,9 +4,9 @@
     <div class="name text-center"> <?php echo $receiver; ?></div>
 </div>
 <ol class='chat msgs'>
-    <div class="msg" title="<?php echo time(); ?>"  style="display: none"></div>
+    <div class="msg" title="<?php echo time(); ?>" style="display: none"></div>
     <?php
-        require APP.'view/direct/message.php';
+    require APP . 'view/direct/message.php';
     ?>
 </ol>
 <form id="msg_form">
