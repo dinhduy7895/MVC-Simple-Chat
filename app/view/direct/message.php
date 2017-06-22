@@ -3,6 +3,7 @@ foreach($messages as $r) {
     if ($r['username'] == $_SESSION['user']) echo "<li class='self'>";
     else echo "<li class='other'>";
     $url = Image::getImage($r['avatar']);
+    echo "<span>{$r['time_post']}</span>";
 
     echo " <div class='wrapper-mess'>
       <div class='avatar' ><img src='{$url}' draggable='false'/></div>
@@ -13,5 +14,5 @@ foreach($messages as $r) {
     echo "    <time>{$r['posted']}</time>
       </div>
       </div>
-      <div class='user-name'> {$r['username']} </div> ";
+      <div class='user-name'> {$r['username']} </div> </li>";
 }

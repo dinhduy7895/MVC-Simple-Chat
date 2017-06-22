@@ -52,7 +52,7 @@ function reloadUser() {
             $(".list-users").html(view);
             setTimeout(function () {
                 reloadUser();
-            },1000)
+            },10000)
         }
     });
 }
@@ -62,6 +62,13 @@ function reload() {
     if (typeof $(".join-room").attr("title") !== 'undefined') {
         return;
     }
+    
+    $.ajax({
+        url : trueUrl("Countdown"),
+            // success : alert('sc'),
+            // error : alert('er')
+    });
+    
     localStorage['lastShow'] = $(".msgs .msg:last").attr("title");
     $.ajax({
         url: trueUrl("Message"),
@@ -76,11 +83,9 @@ function reload() {
         }
     });
 }
-// $(document).ajaxSuccess(function () {
-//     active();
-// });
+
 $(document).ready(function () {
-  //  reload();
+   //   reload();
   //  reloadUser();
     doScroll();
 
@@ -137,7 +142,6 @@ $(document).ready(function () {
                     msg: val,
                 },
                 success: function () {
-                    reload();
                     input.val("");
                 }
 

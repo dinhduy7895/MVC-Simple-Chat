@@ -46,4 +46,13 @@ class DirectController extends ChatController
         require APP . 'view/direct/message.php';
 
     }
+
+    function directAjaxCountdown($param)
+    {
+       
+        $id = $param;
+        $direct = new Direct($this->getDb());
+        $direct->countdownDirect($id);
+
+    } 
 }

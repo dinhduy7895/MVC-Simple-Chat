@@ -13,5 +13,5 @@ foreach($messages as $r) {
     echo "   <time>{$r['posted']}</time>
       </div>
       </div>
-      <div class='user-name'> {$r['username']} </div> ";
+      <div class='user-name'> {$r['username']} </div> </li>";
 }

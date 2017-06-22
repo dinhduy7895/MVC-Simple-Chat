@@ -42,8 +42,13 @@ class Direct extends Model
         $sql->execute(array($id, $_SESSION['id'], $_SESSION['id'], $id));
         $row = $sql->fetch();
         $id = $row['id'];
-        $sql = $db->prepare("SELECT username,avatar, chat_user.* FROM chat_user, user WHERE chat_user.user_user_id =? AND chat_user.sender = user.username ORDER by id ASC ");
-        $sql->execute(array($id));
+        $sql = $db->prepare("SELECT username,avatar, chat_user.* FROM chat_user, user 
+WHERE chat_user.user_user_id =? 
+AND chat_user.sender = user.username 
+AND ( ( chat_user.sender = ? AND time_post > 0)
+OR (chat_user.sender != ? AND time_receive > 0))
+ORDER by id ASC ");
+        $sql->execute(array($id, $_SESSION['user'], $_SESSION['user']));
         $r = $sql->fetchAll();
         return $r;
     }
@@ -57,8 +62,24 @@ class Direct extends Model
         $id = $row['id'];
         $msg = $data['msg'];
         if ($msg != "") {
-            $sql = $db->prepare("INSERT INTO chat_user (sender,message,posted,is_read,user_user_id) VALUES (?,?,NOW(),0,?)");
+            $sql = $db->prepare("INSERT INTO chat_user (sender,message,posted,user_user_id) VALUES (?,?,NOW(),?)");
             $sql->execute(array($_SESSION['user'], $msg, $id));
         }
+    }
+
+    function countdownDirect($id)
+    {
+        $db = $this->getDb();
+        $sql = $db->prepare("SELECT id FROM user_user WHERE (sender = ? and receiver = ?) OR (sender = ? and receiver = ?)");
+        $sql->execute(array($id, $_SESSION['id'], $_SESSION['id'], $id));
+        $row = $sql->fetch();
+        $id = $row['id'];
+        $sql = $db->prepare("UPDATE chat_user SET time_post = time_post -1 
+            WHERE user_user_id = ? AND sender = ? AND  time_post > 0");
+        $sql->execute(array($id, $_SESSION['user']));
+        $sql = $db->prepare("UPDATE chat_user SET time_receive = time_receive -1 
+            WHERE user_user_id = ? AND sender != ? AND  time_receive > 0");
+        $sql->execute(array($id, $_SESSION['user']));
+
     }
 }
