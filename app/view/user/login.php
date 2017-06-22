@@ -7,7 +7,7 @@
     <link rel='stylesheet prefetch'
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="<?php echo URL;?>css/login.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
                 unset($_SESSION['error']);
             }
             ?>
-            <form action=<?php echo URL.'?ctl=User&act=signup'; ?> method="post">
+            <form action=<?php echo URL.'User/signup'; ?> method="post">
                 <div class="input-container">
                     <input type="text" name="username" required="required"/>
                     <label for="username">Username</label>
@@ -46,7 +46,7 @@
             <h1 class="title">Register
                 <div class="close"></div>
             </h1>
-            <form action=<?php echo URL.'?ctl=User&act=register' ;?> method="post">
+            <form action=<?php echo URL.'User/register' ;?> method="post">
                 <div class="input-container">
                     <input type="text" name="username" required="required"/>
                     <label for="username">Username</label>
@@ -71,8 +71,8 @@
         </div>
     </div>
 
-    <script src="plugin/jquery-3.2.1.min.js"></script>
-    <script src="plugin/login.js"></script>
+    <script src="<?php echo URL;?>plugin/jquery-3.2.1.min.js"></script>
+    <script src="<?php echo URL;?>plugin/login.js"></script>
 
 </body>
 </html>

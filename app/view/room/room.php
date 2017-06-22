@@ -7,7 +7,7 @@
     <ol class='chat msgs'>
         <div class="msg" title="<?php echo time(); ?>"  style="display: none"></div>
         <?php
-        if($new == true)require APP.'view/room/join.php';
+        if($new == 'true')require APP.'view/room/join.php';
         else         require APP.'view/room/message.php';
         ?>
     </ol>

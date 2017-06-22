@@ -2,12 +2,12 @@
 <html>
 <head>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="font/css/font-awesome.min.css">
-    <link href="css/chat.css" rel="stylesheet"/>
-    <link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
-    <link href="css/style.css" rel="stylesheet"/>
-    <script src="plugin/jquery-3.2.1.min.js"></script>
+    <link href="<?php  echo URL; ?>css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="<?php  echo URL; ?>font/css/font-awesome.min.css">
+    <link href="<?php  echo URL; ?>css/chat.css" rel="stylesheet"/>
+    <link href="<?php  echo URL; ?>css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="<?php  echo URL; ?>css/style.css" rel="stylesheet"/>
+    <script src="<?php  echo PATH; ?>plugin/jquery-3.2.1.min.js"></script>
     <title>PHP Group Chat With jQuery & AJAX</title>
 </head>
 <body>
@@ -29,7 +29,7 @@
 <div id="myDropdown" class="container dropdown-content">
     <div class="wrapper-arrow">
         <i class="fa fa-sign-out" aria-hidden="true"></i>
-        <a href="<?php echo URL.'?ctl=User&act=logout'; ?>">Log Out</a>
+        <a href="<?php echo URL.'User/logout'; ?>">Log Out</a>
     </div>
     <div class="wrapper-arrow">
         <i class="fa fa-upload" aria-hidden="true"></i>
@@ -37,7 +37,7 @@
     </div>
     <div class="wrapper-arrow">
         <i class="fa fa-upload" aria-hidden="true"></i>
-        <a data-toggle="modal"  href="<?php echo URL.'?ctl=User&act=show';?>">Information</a>
+        <a data-toggle="modal"  href="<?php echo URL.'User/show';?>">Information</a>
     </div>
 </div>
 <div class="container list-users">

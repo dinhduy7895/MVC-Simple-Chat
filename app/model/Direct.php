@@ -57,7 +57,7 @@ class Direct extends Model
         $id = $row['id'];
         $msg = $data['msg'];
         if ($msg != "") {
-            $sql = $db->prepare("INSERT INTO chat_user (sender,message,posted,user_user_id) VALUES (?,?,NOW(),?)");
+            $sql = $db->prepare("INSERT INTO chat_user (sender,message,posted,is_read,user_user_id) VALUES (?,?,NOW(),0,?)");
             $sql->execute(array($_SESSION['user'], $msg, $id));
         }
     }

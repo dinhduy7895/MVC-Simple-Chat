@@ -6,9 +6,11 @@ foreach($messages as $r) {
 
     echo " <div class='wrapper-mess'>
       <div class='avatar' ><img src='{$url}' draggable='false'/></div>
-      <div class='msg' title='{$r['posted']}'>
-        <p>{$r['message']}</p>
-        <time>{$r['posted']}</time>
+      <div class='msg' title='{$r['posted']}'>";
+    $mess = $r['message'];
+    Emojis::Smilify($mess);
+    echo "  <p>{$mess}</p> ";
+    echo "    <time>{$r['posted']}</time>
       </div>
       </div>
       <div class='user-name'> {$r['username']} </div> ";

@@ -1,5 +1,5 @@
 <?php
-$link = URL.'?ctl=User&act=login';
+$link = URL.'User/login';
 echo "<div>Plesae <a href={$link}> Log in </a>to connbbtinue</div>";
 ?>
 

@@ -2,7 +2,7 @@
 include APP . 'model/User.php';
 include APP . 'controllers/ChatController.php';
 
-class UserController extends Controller
+class UserController extends BaseController
 {
     public function index()
     {
@@ -19,9 +19,9 @@ class UserController extends Controller
         $data = $_POST;
         $user = new User($this->getDb());
         if ($user->signup($data)) {
-            header("Location: " . URL . '?ctl=Chat');
+            $this->route('Chat');
         } else {
-            header("Location: " . URL . '?ctl=User');
+            $this->route('User');
         }
     }
 
@@ -30,9 +30,9 @@ class UserController extends Controller
         $data = $_POST;
         $user = new User($this->getDb());
         if ($user->register($data)) {
-            header("Location: " . URL . '?ctl=Chat');
+            $this->route('Chat');
         } else {
-            header("Lcation: " . URL . '?ctl=User');
+            $this->route('User');
         }
     }
 
@@ -40,42 +40,36 @@ class UserController extends Controller
     {
         $user = new User($this->getDb());
         $user->logout();
-        header("Location: " . URL . '?ctl=Home');
+        $this->route('Home');
     }
 
     public function update()
     {
         if (!isset($_POST)) {
-            header("Location: " . URL . '?ctl=Chat');
+            $this->route('Chat');
         }
         $data = $_POST;
         $user = new User($this->getDb());
-        $user->update($data,$_SESSION['id']);
-        header("Location: " . URL . '?ctl=User&act=show');
+        $user->update($data, $_SESSION['id']);
+        $this->route('User', 'show');
     }
 
     public function changePassword()
     {
         if (!isset($_POST)) {
-            header("Location: " . URL . '?ctl=Chat');
+            $this->route('Chat');
         }
         $data = $_POST;
         $user = new User($this->getDb());
         if (!$user->changePassword($data))
-            header("Location: " . URL . '?ctl=User&act=show');
+            $this->route('User', 'show');
         else
-            header("Location: " . URL . '?ctl=Chat');
+            $this->route('Chat');
     }
 
     public function show()
     {
-        $chat = new ChatController();
-        $chat->loadUser();
-        $userLists = $chat->userLists;
-        $roomLists = $chat->roomLists;
-        require APP . 'view/inc/header.php';
-        require APP . 'view/user/show.php';
-        require APP . 'view/inc/footer.php';
+        $this->render('user/show.php');
     }
 
     public function changeAvatar()
@@ -84,13 +78,13 @@ class UserController extends Controller
             $user = new User($this->getDb());
             $user->changeAvatar($_FILES);
         }
-        header("Location: " . URL . '?ctl=Chat');
+        $this->route('Chat');
     }
 
     public function join($param)
     {
         $user = new User($this->getDb());
         $user->join($param);
-        header("Location: " . URL . '?ctl=Room&act=chat&id=' . $param);
+        $this->route('Room', 'chat', $param);
     }
 }

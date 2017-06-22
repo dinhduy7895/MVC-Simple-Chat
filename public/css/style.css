@@ -245,7 +245,6 @@ a{
 }
 .msg img {
     position: relative;
-    display: block;
     width: 450px;
     border-radius: 5px;
     box-shadow: 0px 0px 3px #eee;

@@ -6,12 +6,7 @@ class DirectController extends ChatController
 {
     function index()
     {
-        $this->loadUser();
-        $userLists = $this->userLists;
-        $roomLists = $this->roomLists;
-        require APP . 'view/inc/header.php';
-        require APP . 'view/chat/home.php';
-        require APP . 'view/inc/footer.php';
+        $this->render('chat/home.php');
     }
 
     function chat($param)
@@ -30,12 +25,10 @@ class DirectController extends ChatController
             require APP . 'view/direct/direct.php';
             die();
         }
-        $this->loadUser();
-        $userLists = $this->userLists;
-        $roomLists = $this->roomLists;
-        require APP . 'view/inc/header.php';
-        require APP . 'view/direct/direct.php';
-        require APP . 'view/inc/footer.php';
+        $this->render('direct/direct.php', [
+            'messages' => $messages,
+            'receiver' => $receiver
+        ]);
     }
 
     function directAjaxPost($param)

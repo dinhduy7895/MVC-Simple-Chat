@@ -10,17 +10,15 @@ $(".show-status").on("mousedown", function () {
     }
 });
 function getId(name) {
-    $.urlParam = function (name) {
-        var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
-        if (results == null) {
-            return null;
-        }
-        else {
-            return results[1] || 0;
-        }
-    }
-    return $.urlParam(name);
-
+    var url = window.location.href;
+    var path = location.protocol + '//' + location.host + '/';
+    url = url.replace(path,'');
+    var res = url.split('/');
+   var param = [];
+    param['ctl'] = res[0];
+    param['act'] = res[1];
+    param['id'] = res[2];
+    return param[name];
 }
 function doScroll() {
     if (typeof $(".msgs")[0] === 'undefined') return;
@@ -31,43 +29,18 @@ function doScroll() {
 
 function trueUrl(typeChat) {
     var url = window.location.href;
-    str1 = "ctl=Direct&act=chat";
-    str2 = "ctl=Room&act=chat";
+    str1 = "Direct/chat";
+    str2 = "Room/chat";
     if (url.indexOf(str1) != -1)
-        return url.replace("act=chat", "act=directAjax" + typeChat);
+        return url.replace("/chat", "/directAjax" + typeChat);
     else if (url.indexOf(str2) != -1)
-        return url.replace("act=chat", "act=roomAjax" + typeChat);
+        return url.replace("/chat", "/roomAjax" + typeChat);
     else return false;
 }
 
-// function active() {
-//     console.log("Active");
-//     $('.list-content div a').on("click", function (e) {
-//         $('.list-content div').removeClass('current');
-//         var $parent = $(this).parent();
-//         if (!$parent.hasClass('current')) {
-//             $parent.addClass('current');
-//         }
-//         var targetUrl = $(this).attr("href");
-//         history.pushState(null, null, targetUrl);
-//         $.ajax({
-//             url: targetUrl,
-//             success: function (data) {
-//                 $(".chatbox-wrapper").html(data);
-//                 if (localStorage['lastShow'] != $(".msgs .msg:last").attr("title")) {
-//                     doScroll();
-//                 }
-//             }
-//         });
-//         e.preventDefault();
-//         return false;
-//     });
-//
-// }
 function reloadUser() {
-    console.log(1);
-    var url = location.protocol + '//' + location.host + location.pathname;
-    url += "?ctl=Chat&act=AjaxOnline";
+    var url = location.protocol + '//' + location.host + '/';
+    url += "Chat/AjaxOnline";
     $.ajax({
         url: url,
         type : 'Get',
@@ -85,7 +58,6 @@ function reloadUser() {
 }
 
 function reload() {
-    console.log(2);
 
     if (typeof $(".join-room").attr("title") !== 'undefined') {
         return;
@@ -98,9 +70,9 @@ function reload() {
             if (localStorage['lastShow'] != $(".msgs .msg:last").attr("title")) {
                 doScroll();
             }
-            setTimeout(function () {
-                reload();
-            },1000)
+            // setTimeout(function () {
+            //     reload();
+            // },1000)
         }
     });
 }
@@ -108,9 +80,11 @@ function reload() {
 //     active();
 // });
 $(document).ready(function () {
-    reload();
-    reloadUser();
+  //  reload();
+  //  reloadUser();
     doScroll();
+
+
     // localStorage['lastId'] = 20;
     //
     // $('.chatbox-wrapper').scroll(function () {

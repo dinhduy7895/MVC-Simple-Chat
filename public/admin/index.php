@@ -9,7 +9,7 @@ require APP . 'libs/Image.php';
 require APP . 'framework/route.php';
 require APP . 'framework/controller.php';
 require APP . 'framework/model.php';
-var_dump(PROTOCOL,DOMAIN,SUB_FOLDER);
-exit();
+require APP . 'controllers/BaseController.php';
+
 $route = new Route();
 ?>

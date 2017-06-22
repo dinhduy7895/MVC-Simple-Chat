@@ -11,17 +11,17 @@
 <!-- jQuery 2.2.3 -->
 <!-- Bootstrap 3.3.6 -->
 <!-- DataTables -->
-<script src="plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="<?php  echo PATH; ?>plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?php  echo PATH; ?>plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="<?php  echo PATH; ?>plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js"></script>
+<script src="<?php  echo PATH; ?>plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="plugins/dist/js/app.min.js"></script>
+<script src="<?php  echo PATH; ?>plugins/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="plugins/dist/js/demo.js"></script>
-<script src="plugins/multiselect/bootstrap-multiselect.js"></script>
+<script src="<?php  echo PATH; ?>plugins/dist/js/demo.js"></script>
+<script src="<?php  echo PATH; ?>plugins/multiselect/bootstrap-multiselect.js"></script>
 <!-- page script -->
 <script>
   $(function () {
@@ -58,7 +58,7 @@
         });
     });
 </script>
-  <script src="plugins/myJs/login.js"></script>
+  <script src="<?php  echo PATH; ?>plugins/myJs/login.js"></script>
 
 </body>
 </html>

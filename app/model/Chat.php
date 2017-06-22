@@ -11,7 +11,6 @@ class Chat extends Model
             $sql = $db->prepare("UPDATE user SET seen=NOW() WHERE id=?");
             $sql->execute(array($_SESSION['id']));
         }
-
         $sql = $db->prepare("SELECT * FROM user");
         $sql->execute();
         while ($r = $sql->fetch()) {
@@ -21,7 +20,6 @@ class Chat extends Model
                 $stmt->execute(array($r['id']));
             }
         }
-
     }
 
     function loadUserOnline()

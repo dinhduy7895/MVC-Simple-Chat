@@ -2,7 +2,7 @@
 include APP . 'model/User.php';
 include APP . 'controllers/ChatController.php';
 
-class AdminController extends Controller
+class AdminController extends BaseController
 {
     public function index()
     {

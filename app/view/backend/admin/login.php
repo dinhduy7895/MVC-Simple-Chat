@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="plugins/myCss/login.css">
+    <link rel="stylesheet" href="<?php  echo PATH; ?>plugins/myCss/login.css">
 </head>
 <body>
 <div class="pen-title">
@@ -38,7 +38,7 @@
             </form>
         </div>
     </div>
-    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="plugins/myJs/login.js"></script>
+    <script src="<?php  echo PATH; ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="<?php  echo PATH; ?>plugins/myJs/login.js"></script>
 </body>
 </html>

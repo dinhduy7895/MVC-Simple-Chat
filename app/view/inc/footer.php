@@ -12,7 +12,7 @@
                 <h4 class="modal-title">Please Choose New Avataer</h4>
             </div>
             <div class="modal-body">
-                <form action="<?php echo URL.'?ctl=User&act=changeAvatar' ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo URL.'/User/changeAvatar' ?>" method="post" enctype="multipart/form-data">
                     <input id="file-0" class="file" name="image" type="file" multiple data-min-file-count="1">
                     <br>
 
@@ -28,9 +28,9 @@
 </div>
 </div>
 </div>
-<script src="plugin/chat.js"></script>
-<script src="plugin/fileinput.js" type="text/javascript"></script>
-<script src="plugin/bootstrap.min.js"></script>
+<script src="<?php  echo PATH; ?>plugin/chat.js"></script>
+<script src="<?php  echo PATH; ?>plugin/fileinput.js" type="text/javascript"></script>
+<script src="<?php  echo PATH; ?>plugin/bootstrap.min.js"></script>
 
 <script>
 

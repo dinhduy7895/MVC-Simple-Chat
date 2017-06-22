@@ -6,22 +6,17 @@ class RoomController extends ChatController
 {
     function index()
     {
-        $this->loadUser();
-        $userLists = $this->userLists;
-        $roomLists = $this->roomLists;
-        require APP . 'view/inc/header.php';
-        require APP . 'view/chat/home.php';
-        require APP . 'view/inc/footer.php';
+        $this->render('chat/home.php');
     }
 
     function chat($param)
     {
         $id = $param;
-        $new = false;
+        $new = 'false';
         $room = new Room($this->getDb());
         if ($room->isExist($id)) {
             if ($room->isNewRoom($id)) {
-                $new = true;
+                $new = 'true';
             }
             $row = $room->isExist($id);
             $receiver = $row['name'];
@@ -31,13 +26,11 @@ class RoomController extends ChatController
             require APP . 'view/room/room.php';
             die();
         }
-
-        $this->loadUser();
-        $userLists = $this->userLists;
-        $roomLists = $this->roomLists;
-        require APP . 'view/inc/header.php';
-        require APP . 'view/room/room.php';
-        require APP . 'view/inc/footer.php';
+        $this->render('room/room.php', [
+            'new' => $new,
+            'messages' => $messages,
+              'receiver' => $receiver
+        ]);
     }
 
     function roomAjaxPost($param)

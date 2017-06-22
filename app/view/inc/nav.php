@@ -4,7 +4,7 @@
     echo "<h3 class=\"add-room active\">
 		Direct <span class=\"room-count-small\"></span>
 	</h3>";
-    $link = URL.'?ctl=Direct&act=chat&id=';
+    $link = URL.'Direct/chat/';
     foreach ($userLists as $key=>$userList) {
         if($userList['id'] == $_SESSION['id']) continue;
        $class="";
@@ -17,7 +17,7 @@
 
 
     }
-    $link = URL.'?ctl=Room&act=chat&id=';
+    $link = URL.'Room/chat/';
     echo "<h3 class=\"add-room active\">
 		Channels <span class=\"room-count-small\"></span>
 	</h3>";
