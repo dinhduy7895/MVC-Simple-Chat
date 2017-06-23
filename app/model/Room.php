@@ -22,17 +22,31 @@ class Room extends Model
         else return false;
     }
 
-    function loadMessageRoom($id)
+    function loadMessageRoom($id, $lastShow=0)
+    {
+        $db = $this->getDb();
+        $query = "SELECT* FROM (SELECT username,avatar, chat_room.* 
+        FROM chat_room, user 
+        WHERE chat_room.room_id =? 
+        AND chat_room.sender = user.username 
+        AND chat_room.id > ?
+        ORDER by id DESC LIMIT 0,20) sub ORDER BY id ASC";
+        $sql = $db->prepare($query);
+        $sql->execute(array($id, $lastShow));
+        $r = $sql->fetchAll();
+        return $r;
+    }
+
+    function loadLastMessageRoom($id, $firstShow)
     {
         $db = $this->getDb();
         $sql = $db->prepare("SELECT* FROM (SELECT username,avatar, chat_room.* 
         FROM chat_room, user 
         WHERE chat_room.room_id =? 
         AND chat_room.sender = user.username 
-        AND ( ( chat_room.sender = ? AND time_post > 0)
-        OR (chat_room.sender != ? AND time_receive > 0))
-        ORDER by id DESC LIMIT 0,20) sub ORDER BY id ASC");
-        $sql->execute(array($id, $_SESSION['user'], $_SESSION['user']));
+        AND chat_room.id < ?
+        ORDER BY id DESC LIMIT 0,20) sub ORDER BY id ASC");
+        $sql->execute(array($id, $firstShow));
         $r = $sql->fetchAll();
         return $r;
     }

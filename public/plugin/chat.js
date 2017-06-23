@@ -70,12 +70,16 @@ function reload() {
     if (typeof $(".join-room").attr("title") !== 'undefined') {
         return;
     }
+    var count = $(".msgs .msg").length;
     localStorage['lastShow'] = $(".msgs .msg:last").attr("title");
     $.ajax({
         url: trueUrl("Message"),
+        type: 'Post',
+        data: {
+            lastShow: localStorage['lastShow']
+        },
         success: function (view) {
-
-            $(".msgs").html(view);
+            $(".msgs").append(view);
             if (localStorage['lastShow'] != $(".msgs .msg:last").attr("title")) {
                 doScroll();
             }
@@ -109,47 +113,34 @@ $(document).ready(function () {
     reload();
     reloadUpdate();
     doScroll();
+    localStorage['firstShow'] = '';
+    $('#loader').hide();
+    $('.msgs').scroll(function () {
+        if ($('.msgs').scrollTop() == 0) {
+            if (localStorage['firstShow'] != $(".msgs>li .msg:nth-child(2)").attr("title")) {
+                localStorage['firstShow'] = $(".msgs>li .msg:nth-child(2)").attr("title");
+                $('#loader').show();
+                $.ajax({
+                    url: trueUrl("LastMessage"),
+                    type: 'Post',
+                    dataType: 'html',
+                    data: {
+                        firstShow: localStorage['firstShow']
+                    },
+                    success: function (data) {
+                        setTimeout(function () {
+                            $('.msgs').prepend(data);
 
-    // localStorage['lastId'] = 20;
-    //
-    // $('.chatbox-wrapper').scroll(function () {
-    //     if ($('.chatbox-wrapper').scrollTop() == 0) {
-    //         // Display AJAX loader animation
-    //         $('#loader').show();
-    //
-    //         // Youd do Something like this here
-    //         // Query the server and paginate results
-    //         // Then prepend
-    //         $.ajax({
-    //             url: trueUrl("Message"),
-    //             dataType: 'html',
-    //             success: function (data) {
-    //                 setTimeout(function () {
-    //                     $('.msgs').prepend(data);
-    //                     $('#loader').hide();
-    //                     $('.chatbox-wrapper').scrollTop(30);
-    //                 },780)
-    //
-    //                 localStorage['lastId']  += 20;
-    //             }
-    //         })
-    //         //BUT FOR EXAMPLE PURPOSES......
-    //         // We'll just simulate generation on server
-    //
-    //
-    //         //Simulate server delay;
-    //         setTimeout(function () {
-    //             // Simulate retrieving 4 messages
-    //             for (var i = 0; i < 4; i++) {
-    //                 $('.inner').prepend('<div class="messages">Newly Loaded messages<br/><span class="date">' + Date() + '</span> </div>');
-    //             }
-    //             // Hide loader on success
-    //             $('#loader').hide();
-    //             // Reset scroll
-    //             $('#chatBox').scrollTop(30);
-    //         }, 780);
-    //     }
-    // });
+                            $('#loader').hide();
+                            $('.msgs').scrollTop(80);
+                        }, 780)
+
+                    }
+                })
+            }
+        }
+    });
+
     $("#msg_form").on("submit", function () {
         input = $(this).find("input[type=text]");
         val = input.val();

@@ -43,8 +43,19 @@ class RoomController extends ChatController
     function roomAjaxMessage($param)
     {
         $id = $param;
+        $lastShow = $_POST['lastShow'];
         $room = new Room($this->getDb());
-        $messages = $room->loadMessageRoom($id);
+        $messages = $room->loadMessageRoom($id, $lastShow);
+        require APP . 'view/room/message.php';
+
+    }
+
+    function roomAjaxLastMessage($param)
+    {
+        $id = $param;
+        $firstShow = $_POST['firstShow'];
+        $room = new Room($this->getDb());
+        $messages = $room->loadLastMessageRoom($id, $firstShow);
         require APP . 'view/room/message.php';
 
     }
