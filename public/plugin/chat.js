@@ -67,11 +67,16 @@ function reloadUser() {
 
 function reload() {
 
+    var url = window.location.href;
+    var check;
+    if (url.indexOf('Direct')  ==  -1 ) check = false;
+    else check = true;
     if (typeof $(".join-room").attr("title") !== 'undefined') {
         return;
     }
     var count = $(".msgs .msg").length;
     localStorage['lastShow'] = $(".msgs .msg:last").attr("title");
+
     $.ajax({
         url: trueUrl("Message"),
         type: 'Post',
@@ -79,14 +84,18 @@ function reload() {
             lastShow: localStorage['lastShow']
         },
         success: function (view) {
-            $(".msgs").append(view);
-            if (localStorage['lastShow'] != $(".msgs .msg:last").attr("title")) {
+            if (check)
+               $(".msgs").html(view);
+            else
+             $(".msgs").append(view);
+            if (localStorage['lastShow'] < $(".msgs .msg:last").attr("title")) {
                 doScroll();
             }
             setTimeout(function () {
                 reload();
             }, 1000)
         }
+        
     });
 }
 
@@ -114,32 +123,7 @@ $(document).ready(function () {
     reloadUpdate();
     doScroll();
     localStorage['firstShow'] = '';
-    $('#loader').hide();
-    $('.msgs').scroll(function () {
-        if ($('.msgs').scrollTop() == 0) {
-            if (localStorage['firstShow'] != $(".msgs>li .msg:nth-child(2)").attr("title")) {
-                localStorage['firstShow'] = $(".msgs>li .msg:nth-child(2)").attr("title");
-                $('#loader').show();
-                $.ajax({
-                    url: trueUrl("LastMessage"),
-                    type: 'Post',
-                    dataType: 'html',
-                    data: {
-                        firstShow: localStorage['firstShow']
-                    },
-                    success: function (data) {
-                        setTimeout(function () {
-                            $('.msgs').prepend(data);
-
-                            $('#loader').hide();
-                            $('.msgs').scrollTop(80);
-                        }, 780)
-
-                    }
-                })
-            }
-        }
-    });
+    
 
     $("#msg_form").on("submit", function () {
         input = $(this).find("input[type=text]");

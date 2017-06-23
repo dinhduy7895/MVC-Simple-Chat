@@ -1,16 +1,8 @@
 <?php
-class  BaseController extends  Controller
+
+class  BaseController extends Controller
 {
-    function __construct() {
-        $this->loadDB();
-    }
 
-
-    function loadDB() {
-         $conn = new PDO(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=' . DB_CHARSET, DB_USER, DB_PASS);
-         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-         $this->db = $conn;
-     }
 
     function getDb()
     {
@@ -21,13 +13,9 @@ class  BaseController extends  Controller
     {
         if ($param != null) {
             foreach ($param as $key => $value) {
-                eval('$' . $key . '=' . var_export($value,true) . ';');
+                eval('$' . $key . '=' . var_export($value, true) . ';');
             }
         }
-        $chat = new Chat($this->getDb());
-        $chat->refreshUser();
-        $userLists = $chat->loadUserOnline();
-        $roomLists = $chat->loadRoomAvailable($_SESSION['id']);
         require APP . 'view/inc/header.php';
         require APP . 'view/' . $viewUrl;
         require APP . 'view/inc/footer.php';

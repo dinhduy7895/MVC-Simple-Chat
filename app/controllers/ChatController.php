@@ -3,18 +3,32 @@ include APP . 'model/Chat.php';
 
 class ChatController extends BaseController
 {
-    public $userLists;
-    public $roomList;
-
+    protected $userLists;
+    protected $roomLists;
+    protected $rooms;
     function home()
     {
-        $this->render('chat/home.php');
+        $chat = new Chat();
+        $userLists = $chat->loadUserOnline();
+        $roomLists = $chat->loadRoomAvailable($_SESSION['id']);
+        $this->render('chat/home.php', [
+            'userLists' => $userLists,
+            'roomLists' => $roomLists,
+        ]);
 
     }
 
     function index()
     {
-        $this->render('chat/home.php');
+        $chat = new Chat();
+        $userLists = $chat->loadUserOnline();
+        $roomLists = $chat->loadRoomAvailable($_SESSION['id']);
+        $rooms = $chat->loadAllRoom();
+        $this->render('chat/home.php', [
+            'rooms' => $rooms,
+            'userLists' => $userLists,
+            'roomLists' => $roomLists,
+        ]);
     }
 
     function AjaxOnline($param)
@@ -25,15 +39,18 @@ class ChatController extends BaseController
         $this->loadUser();
         $userLists = $this->userLists;
         $roomLists = $this->roomLists;
+        $rooms = $this->rooms;
         require APP . 'view/inc/nav.php';
     }
 
     function loadUser()
     {
-        $chat = new Chat($this->getDb());
+        $chat = new Chat();
         $chat->refreshUser();
         $this->userLists = $chat->loadUserOnline();
         $this->roomLists = $chat->loadRoomAvailable($_SESSION['id']);
+        $this->rooms = $chat->loadAllRoom();
+
     }
 }
 

@@ -17,7 +17,7 @@ class UserController extends BaseController
     public function signup()
     {
         $data = $_POST;
-        $user = new User($this->getDb());
+        $user = new User();
         if ($user->signup($data)) {
             $this->route('Chat');
         } else {
@@ -28,7 +28,7 @@ class UserController extends BaseController
     public function register()
     {
         $data = $_POST;
-        $user = new User($this->getDb());
+        $user = new User();
         if ($user->register($data)) {
             $this->route('Chat');
         } else {
@@ -38,7 +38,7 @@ class UserController extends BaseController
 
     public function logout()
     {
-        $user = new User($this->getDb());
+        $user = new User();
         $user->logout();
         $this->route('Home');
     }
@@ -49,7 +49,7 @@ class UserController extends BaseController
             $this->route('Chat');
         }
         $data = $_POST;
-        $user = new User($this->getDb());
+        $user = new User();
         $user->update($data, $_SESSION['id']);
         $this->route('User', 'show');
     }
@@ -60,7 +60,7 @@ class UserController extends BaseController
             $this->route('Chat');
         }
         $data = $_POST;
-        $user = new User($this->getDb());
+        $user = new User();
         if (!$user->changePassword($data))
             $this->route('User', 'show');
         else
@@ -75,7 +75,7 @@ class UserController extends BaseController
     public function changeAvatar()
     {
         if (isset($_POST)) {
-            $user = new User($this->getDb());
+            $user = new User();
             $user->changeAvatar($_FILES);
         }
         $this->route('Chat');
@@ -83,7 +83,7 @@ class UserController extends BaseController
 
     public function join($param)
     {
-        $user = new User($this->getDb());
+        $user = new User();
         $user->join($param);
         $this->route('Room', 'chat', $param);
     }

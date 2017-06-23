@@ -4,7 +4,7 @@ class User extends Model
 {
     function signup($data)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $username = htmlspecialchars($data['username']);
         $pass = $data['password'];
         $stmt = $db->prepare("SELECT * FROM user WHERE username=:Name AND password=:Pass");
@@ -29,7 +29,7 @@ class User extends Model
 
     function signupAdmin($data)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $username = htmlspecialchars($data['username']);
         $pass = $data['password'];
         $stmt = $db->prepare("SELECT * FROM user WHERE username=:Name AND password=:Pass AND role = 1");
@@ -50,7 +50,7 @@ class User extends Model
     
     function register($data)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $username = $data['username'];
         $pass = $data['pass'];
         $rePass = $data['rePass'];
@@ -91,7 +91,7 @@ class User extends Model
 
     function logout()
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("UPDATE user SET status=0 WHERE id=?");
         $sql->execute(array($_SESSION['id']));
         session_destroy();
@@ -99,7 +99,7 @@ class User extends Model
 
     function find($id)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT user.* FROM user  WHERE id=?");
         $sql->execute(array($id));
         if($sql->rowCount() == 0) return false;
@@ -109,7 +109,7 @@ class User extends Model
     function update($data,$id )
     {
         
-        $db = $this->getDb();
+        $db = $this->db;
         $username = $data['username'];
         $sql = "UPDATE  user SET username=? WHERE id = ?";
         $stmt = $db->prepare($sql);
@@ -124,7 +124,7 @@ class User extends Model
     function updateAdmin($data,$id )
     {
 
-        $db = $this->getDb();
+        $db = $this->db;
         $username = $data['username'];
         $role = $data['role'];
         $sql = "UPDATE  user SET username=? , role = ? WHERE id = ?";
@@ -139,7 +139,7 @@ class User extends Model
     function changePassword($data)
     {
 
-        $db = $this->getDb();
+        $db = $this->db;
         $pass = $data['pass'];
         $sql = $db->prepare("SELECT id FROM user WHERE username = ? and password = ?");
         $sql->execute(array($_SESSION['user'], $pass));
@@ -160,7 +160,7 @@ class User extends Model
 
     function changeAvatar($data)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $image = $data['image']['name'];
         Image::upload($_FILES['image']);
         $sql = $db->prepare("UPDATE user SET avatar=? WHERE id=?");
@@ -175,27 +175,27 @@ class User extends Model
  
     function join($id)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("INSERT INTO user_room (`user_id`, `room_id`) VALUES (?,?)");
         $sql->execute(array($_SESSION['id'], $id));
     }
 
     function all(){
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT user.id, user.username, user.role, user.status FROM user ");
         $sql->execute();
         return $sql->fetchAll();
     }
 
     function delete($id){
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("DELETE FROM user WHERE id = ?");
         $sql->execute(array($id));
     }
 
     function create($data)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $username = $data['username'];
         $pass = $data['pass'];
         $rePass = $data['rePass'];
@@ -223,7 +223,7 @@ class User extends Model
     }
 
     function search($data){
-        $db = $this->getDb();
+        $db = $this->db;
         $username = $data['username'];
         $status = $data['status'];
         $role = $data['role'];

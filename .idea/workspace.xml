@@ -3,9 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="85f967af-fedf-4bdf-928b-d835b7119f89" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BaseController.php" afterPath="$PROJECT_DIR$/app/controllers/BaseController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ChatController.php" afterPath="$PROJECT_DIR$/app/controllers/ChatController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DirectController.php" afterPath="$PROJECT_DIR$/app/controllers/DirectController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/RoomController.php" afterPath="$PROJECT_DIR$/app/controllers/RoomController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/UserController.php" afterPath="$PROJECT_DIR$/app/controllers/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/framework/controller.php" afterPath="$PROJECT_DIR$/app/framework/controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/framework/model.php" afterPath="$PROJECT_DIR$/app/framework/model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/Chat.php" afterPath="$PROJECT_DIR$/app/model/Chat.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/Direct.php" afterPath="$PROJECT_DIR$/app/model/Direct.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/Room.php" afterPath="$PROJECT_DIR$/app/model/Room.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/room/message.php" afterPath="$PROJECT_DIR$/app/view/room/message.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/User.php" afterPath="$PROJECT_DIR$/app/model/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/direct/message.php" afterPath="$PROJECT_DIR$/app/view/direct/message.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/inc/nav.php" afterPath="$PROJECT_DIR$/app/view/inc/nav.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/room/room.php" afterPath="$PROJECT_DIR$/app/view/room/room.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugin/chat.js" afterPath="$PROJECT_DIR$/public/plugin/chat.js" />
     </list>
@@ -29,51 +39,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Direct.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/model/Direct.php">
+      <file leaf-file-name="nav.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/view/inc/nav.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="653">
-              <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+            <state relative-caret-position="899">
+              <caret line="97" column="7" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="7" />
               <folding>
-                <marker date="1498187212314" expanded="true" signature="127:166" ph="SELECT id FR... user" />
-                <marker date="1498187212314" expanded="true" signature="382:475" ph="SELECT id FR... user_user" />
-                <marker date="1498187212314" expanded="true" signature="727:779" ph="INSERT INTO user_user... " />
-                <marker date="1498187212314" expanded="true" signature="930:968" ph="SELECT name user" />
-                <marker date="1498187212314" expanded="true" signature="1145:1238" ph="SELECT id FR... user_user" />
-                <marker date="1498187212314" expanded="true" signature="1401:1636" ph="SELECT usern... chat_user" />
-                <marker date="1498187212314" expanded="true" signature="1868:1961" ph="SELECT id FR... user_user" />
-                <marker date="1498187212314" expanded="true" signature="2183:2262" ph="INSERT INTO chat_user... " />
-                <marker date="1498187212314" expanded="true" signature="2452:2545" ph="SELECT id FR... user_user" />
-                <marker date="1498187212314" expanded="true" signature="2744:2844" ph="UPDATE chat_... " />
-                <marker date="1498187212314" expanded="true" signature="2943:3038" ph="UPDATE chat_... " />
-                <marker date="1498187212314" expanded="true" signature="3118:3238" ph="UPDATE chat_... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoomController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/RoomController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="57" column="64" selection-start-line="57" selection-start-column="64" selection-end-line="57" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Room.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/Room.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-              <folding>
-                <marker date="1498211379810" expanded="true" signature="125:171" ph="SELECT room.... room" />
-                <marker date="1498211379810" expanded="true" signature="125:172" ph="SELECT room.... room" />
-                <marker date="1498211379810" expanded="true" signature="341:472" ph="SELECT COUNT... user_room" />
-                <marker date="1498211379810" expanded="true" signature="1768:1842" ph="INSERT INTO chat_room... " />
-                <marker date="1498211379810" expanded="true" signature="1943:2040" ph="UPDATE user_... " />
-                <marker date="1498211379810" expanded="true" signature="2256:2342" ph="UPDATE user_... " />
+                <marker date="1498240306425" expanded="true" signature="75:79" ph="..." />
+                <marker date="1498240306425" expanded="true" signature="114:171" ph="..." />
+                <marker date="1498240306425" expanded="true" signature="914:973" ph="..." />
+                <marker date="1498240306425" expanded="true" signature="1533:1596" ph="..." />
+                <marker date="1498240306425" expanded="true" signature="1858:1891" ph="..." />
               </folding>
             </state>
           </provider>
@@ -82,8 +58,8 @@
       <file leaf-file-name="chat.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/plugin/chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+            <state relative-caret-position="518">
+              <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -109,39 +85,20 @@
         <entry file="file://$PROJECT_DIR$/app/view/room/room.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+              <caret line="10" column="130" selection-start-line="10" selection-start-column="130" selection-end-line="10" selection-end-column="130" />
               <folding>
+                <element signature="n#style#0;n#li#0;n#ol#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#li#0;n#ol#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#ol#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chat.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/Chat.php">
+      <file leaf-file-name="RoomController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/RoomController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="52" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="52" />
-              <folding>
-                <marker date="1498188770418" expanded="true" signature="126:162" ph="SELECT usern... user" />
-                <marker date="1498188770418" expanded="true" signature="283:320" ph="UPDATE user " />
-                <marker date="1498188770418" expanded="true" signature="414:432" ph="SELECT * FRO... user" />
-                <marker date="1498188770418" expanded="true" signature="677:712" ph="UPDATE user " />
-                <marker date="1498188770418" expanded="true" signature="891:1213" ph="SELECT id, s... user" />
-                <marker date="1498188770418" expanded="true" signature="891:1215" ph="SELECT user.... user" />
-                <marker date="1498188770418" expanded="true" signature="940:1184" ph="SELECT chat_... " />
-                <marker date="1498188770418" expanded="true" signature="1459:1680" ph="SELECT room.... room" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DirectController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/DirectController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" column="33" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="299">
+              <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -155,8 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/UserConTroller.php" />
-        <option value="$PROJECT_DIR$/app/framework/model.php" />
         <option value="$PROJECT_DIR$/app/view/direct/join.php" />
         <option value="$PROJECT_DIR$/app/view/direct/direct.php" />
         <option value="$PROJECT_DIR$/app/view/chat/home.php" />
@@ -182,30 +137,32 @@
         <option value="$PROJECT_DIR$/app/view/user/show.php" />
         <option value="$PROJECT_DIR$/app/framework/route.php" />
         <option value="$PROJECT_DIR$/app/controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/app/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/controllers/backend/AdminController.php" />
-        <option value="$PROJECT_DIR$/app/framework/controller.php" />
-        <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/app/libs/emojis.php" />
         <option value="$PROJECT_DIR$/public/admin/index.php" />
         <option value="$PROJECT_DIR$/app/libs/Image.php" />
         <option value="$PROJECT_DIR$/app/libs/Emojis.php" />
-        <option value="$PROJECT_DIR$/app/controllers/ChatController.php" />
-        <option value="$PROJECT_DIR$/app/view/direct/message.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/app/model/User.php" />
         <option value="$PROJECT_DIR$/app/view/inc/header.php" />
         <option value="$PROJECT_DIR$/app/view/inc/footer.php" />
-        <option value="$PROJECT_DIR$/app/controllers/DirectController.php" />
-        <option value="$PROJECT_DIR$/app/model/Direct.php" />
-        <option value="$PROJECT_DIR$/app/model/Chat.php" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/app/view/inc/nav.php" />
+        <option value="$PROJECT_DIR$/app/view/room/message.php" />
+        <option value="$PROJECT_DIR$/app/view/direct/seen.php" />
+        <option value="$PROJECT_DIR$/app/view/direct/message.php" />
+        <option value="$PROJECT_DIR$/app/framework/model.php" />
+        <option value="$PROJECT_DIR$/app/framework/controller.php" />
+        <option value="$PROJECT_DIR$/app/model/Direct.php" />
+        <option value="$PROJECT_DIR$/app/model/Room.php" />
+        <option value="$PROJECT_DIR$/app/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/app/model/User.php" />
+        <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
+        <option value="$PROJECT_DIR$/app/model/Chat.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ChatController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/DirectController.php" />
         <option value="$PROJECT_DIR$/app/controllers/RoomController.php" />
         <option value="$PROJECT_DIR$/app/view/room/room.php" />
-        <option value="$PROJECT_DIR$/app/view/room/message.php" />
-        <option value="$PROJECT_DIR$/app/model/Room.php" />
         <option value="$PROJECT_DIR$/public/plugin/chat.js" />
+        <option value="$PROJECT_DIR$/app/view/inc/nav.php" />
       </list>
     </option>
   </component>
@@ -532,7 +489,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="framework" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,10 +508,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -649,12 +602,12 @@
       <workItem from="1497594318321" duration="17007000" />
       <workItem from="1497620140411" duration="69502000" />
       <workItem from="1497975143399" duration="53764000" />
-      <workItem from="1498199928997" duration="8803000" />
+      <workItem from="1498199928997" duration="20037000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169273000" />
+    <option name="totallyTimeSpent" value="180507000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -692,18 +645,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/view/backend/room/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/backend/admin/view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -743,6 +689,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -796,21 +743,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/chat/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/chat/room.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/direct/direct.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
@@ -828,6 +761,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="779">
           <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+          <folding>
+            <marker date="1498095795902" expanded="true" signature="563:575" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -835,13 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/framework/model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -861,18 +790,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/framework/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/framework/route.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-361">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -880,13 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -903,32 +818,6 @@
         <state relative-caret-position="555">
           <caret line="37" column="69" selection-start-line="37" selection-start-column="69" selection-end-line="37" selection-end-column="69" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/direct/message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <marker date="1498143191650" expanded="true" signature="315:452" ph="..." />
-            <marker date="1498143191650" expanded="true" signature="315:628" ph="..." />
-            <marker date="1498143191650" expanded="true" signature="452:615" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -961,47 +850,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5850">
           <caret line="390" column="3" selection-start-line="390" selection-start-column="3" selection-end-line="390" selection-end-column="3" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/inc/nav.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-          <folding>
-            <marker date="1498190801495" expanded="true" signature="75:79" ph="..." />
-            <marker date="1498190801495" expanded="true" signature="114:171" ph="..." />
-            <marker date="1498190801495" expanded="true" signature="913:972" ph="..." />
-            <marker date="1498190801495" expanded="true" signature="1585:1618" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,47 +866,206 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ChatController.php">
+    <entry file="file://$PROJECT_DIR$/app/view/direct/direct.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+        <state relative-caret-position="180">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/RoomController.php">
+    <entry file="file://$PROJECT_DIR$/app/view/direct/seen.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="57" column="64" selection-start-line="57" selection-start-column="64" selection-end-line="57" selection-end-column="64" />
+        <state relative-caret-position="15">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/direct/message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+          <folding>
+            <marker date="1498223418917" expanded="true" signature="362:499" ph="..." />
+            <marker date="1498223418917" expanded="true" signature="362:675" ph="..." />
+            <marker date="1498223418917" expanded="true" signature="499:662" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/framework/model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/framework/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Room.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding>
+            <marker date="1498237391524" expanded="true" signature="120:166" ph="SELECT room.... room" />
+            <marker date="1498237391524" expanded="true" signature="331:462" ph="SELECT COUNT... user_room" />
+            <marker date="1498237391524" expanded="true" signature="1743:1817" ph="INSERT INTO chat_room... " />
+            <marker date="1498237391524" expanded="true" signature="1918:2015" ph="UPDATE user_... " />
+            <marker date="1498237391524" expanded="true" signature="2226:2312" ph="UPDATE user_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="172" column="5" selection-start-line="172" selection-start-column="5" selection-end-line="172" selection-end-column="5" />
+          <folding>
+            <marker date="1498237470242" expanded="true" signature="214:272" ph="SELECT * FRO... user" />
+            <marker date="1498237470242" expanded="true" signature="818:853" ph="UPDATE user " />
+            <marker date="1498237470242" expanded="true" signature="1135:1206" ph="SELECT * FRO... user" />
+            <marker date="1498237470242" expanded="true" signature="2057:2096" ph="SELECT * FRO... user" />
+            <marker date="1498237470242" expanded="true" signature="2300:2386" ph="INSERT INTO user... " />
+            <marker date="1498237470242" expanded="true" signature="2707:2750" ph="SELECT * FRO... user" />
+            <marker date="1498237470242" expanded="true" signature="3381:3416" ph="UPDATE user " />
+            <marker date="1498237470242" expanded="true" signature="3584:3619" ph="SELECT user.... user" />
+            <marker date="1498237470242" expanded="true" signature="3870:3910" ph="UPDATE user " />
+            <marker date="1498237470242" expanded="true" signature="4325:4376" ph="UPDATE user " />
+            <marker date="1498237470242" expanded="true" signature="4735:4790" ph="SELECT id FR... user" />
+            <marker date="1498237470242" expanded="true" signature="5164:5208" ph="UPDATE user " />
+            <marker date="1498237470242" expanded="true" signature="5489:5524" ph="UPDATE user " />
+            <marker date="1498237470242" expanded="true" signature="5852:5909" ph="INSERT INTO user_room... " />
+            <marker date="1498237470242" expanded="true" signature="6046:6109" ph="SELECT user.... user" />
+            <marker date="1498237470242" expanded="true" signature="6259:6288" ph="DELETE FROM " />
+            <marker date="1498237470242" expanded="true" signature="6702:6741" ph="SELECT * FRO... user" />
+            <marker date="1498237470242" expanded="true" signature="6945:7044" ph="INSERT INTO user... " />
+            <marker date="1498237470242" expanded="true" signature="7617:7684" ph="SELECT user.... user" />
+            <marker date="1498237470242" expanded="true" signature="7617:7703" ph="SELECT user.... user" />
+            <marker date="1498237470242" expanded="true" signature="7617:7704" ph="SELECT user.... user" />
+            <marker date="1498237470242" expanded="true" signature="7617:7712" ph="SELECT user.... user" />
+            <marker date="1498237470242" expanded="true" signature="7617:7714" ph="SELECT user.... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Direct.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="81" column="3" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
+          <folding>
+            <marker date="1498237267537" expanded="true" signature="122:161" ph="SELECT id FR... user" />
+            <marker date="1498237267537" expanded="true" signature="372:465" ph="SELECT id FR... user_user" />
+            <marker date="1498237267537" expanded="true" signature="712:764" ph="INSERT INTO user_user... " />
+            <marker date="1498237267537" expanded="true" signature="910:948" ph="SELECT usern... user" />
+            <marker date="1498237267537" expanded="true" signature="1120:1213" ph="SELECT id FR... user_user" />
+            <marker date="1498237267537" expanded="true" signature="1376:1611" ph="SELECT usern... chat_user" />
+            <marker date="1498237267537" expanded="true" signature="1808:1921" ph="SELECT COUNT... chat_user" />
+            <marker date="1498237267537" expanded="true" signature="2193:2286" ph="SELECT id FR... user_user" />
+            <marker date="1498237267537" expanded="true" signature="2508:2587" ph="INSERT INTO chat_user... " />
+            <marker date="1498237267537" expanded="true" signature="2772:2865" ph="SELECT id FR... user_user" />
+            <marker date="1498237267537" expanded="true" signature="3064:3164" ph="UPDATE chat_... " />
+            <marker date="1498237267537" expanded="true" signature="3263:3358" ph="UPDATE chat_... " />
+            <marker date="1498237267537" expanded="true" signature="3438:3558" ph="UPDATE chat_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/chat/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Chat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="52" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="52" />
+        <state relative-caret-position="629">
+          <caret line="46" column="55" selection-start-line="43" selection-start-column="29" selection-end-line="46" selection-end-column="55" />
           <folding>
-            <marker date="1498188770418" expanded="true" signature="126:162" ph="SELECT usern... user" />
-            <marker date="1498188770418" expanded="true" signature="283:320" ph="UPDATE user " />
-            <marker date="1498188770418" expanded="true" signature="414:432" ph="SELECT * FRO... user" />
-            <marker date="1498188770418" expanded="true" signature="677:712" ph="UPDATE user " />
-            <marker date="1498188770418" expanded="true" signature="891:1213" ph="SELECT id, s... user" />
-            <marker date="1498188770418" expanded="true" signature="891:1215" ph="SELECT user.... user" />
-            <marker date="1498188770418" expanded="true" signature="940:1184" ph="SELECT chat_... " />
-            <marker date="1498188770418" expanded="true" signature="1459:1680" ph="SELECT room.... room" />
+            <marker date="1498238521292" expanded="true" signature="123:159" ph="SELECT usern... user" />
+            <marker date="1498238521292" expanded="true" signature="280:317" ph="UPDATE user " />
+            <marker date="1498238521292" expanded="true" signature="411:429" ph="SELECT * FRO... user" />
+            <marker date="1498238521292" expanded="true" signature="674:709" ph="UPDATE user " />
+            <marker date="1498238521292" expanded="true" signature="883:1205" ph="SELECT id, s... user" />
+            <marker date="1498238521292" expanded="true" signature="883:1207" ph="SELECT user.... user" />
+            <marker date="1498238521292" expanded="true" signature="932:1176" ph="SELECT chat_... " />
+            <marker date="1498238521292" expanded="true" signature="1446:1611" ph="SELECT room.... room" />
+            <marker date="1498238521292" expanded="true" signature="1446:1667" ph="SELECT room.... room" />
+            <marker date="1498238521292" expanded="true" signature="1850:1885" ph="SELECT room.... room" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/room/room.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#li#0;n#ol#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#ol#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ChatController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/DirectController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/RoomController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1071,54 +1083,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Room.php">
+    <entry file="file://$PROJECT_DIR$/app/view/room/room.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+        <state relative-caret-position="150">
+          <caret line="10" column="130" selection-start-line="10" selection-start-column="130" selection-end-line="10" selection-end-column="130" />
           <folding>
-            <marker date="1498211379810" expanded="true" signature="125:171" ph="SELECT room.... room" />
-            <marker date="1498211379810" expanded="true" signature="125:172" ph="SELECT room.... room" />
-            <marker date="1498211379810" expanded="true" signature="341:472" ph="SELECT COUNT... user_room" />
-            <marker date="1498211379810" expanded="true" signature="1768:1842" ph="INSERT INTO chat_room... " />
-            <marker date="1498211379810" expanded="true" signature="1943:2040" ph="UPDATE user_... " />
-            <marker date="1498211379810" expanded="true" signature="2256:2342" ph="UPDATE user_... " />
+            <element signature="n#style#0;n#li#0;n#ol#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#li#0;n#ol#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/plugin/chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        <state relative-caret-position="518">
+          <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/DirectController.php">
+    <entry file="file://$PROJECT_DIR$/app/view/inc/nav.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="33" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Direct.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+        <state relative-caret-position="899">
+          <caret line="97" column="7" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="7" />
           <folding>
-            <marker date="1498187212314" expanded="true" signature="127:166" ph="SELECT id FR... user" />
-            <marker date="1498187212314" expanded="true" signature="382:475" ph="SELECT id FR... user_user" />
-            <marker date="1498187212314" expanded="true" signature="727:779" ph="INSERT INTO user_user... " />
-            <marker date="1498187212314" expanded="true" signature="930:968" ph="SELECT name user" />
-            <marker date="1498187212314" expanded="true" signature="1145:1238" ph="SELECT id FR... user_user" />
-            <marker date="1498187212314" expanded="true" signature="1401:1636" ph="SELECT usern... chat_user" />
-            <marker date="1498187212314" expanded="true" signature="1868:1961" ph="SELECT id FR... user_user" />
-            <marker date="1498187212314" expanded="true" signature="2183:2262" ph="INSERT INTO chat_user... " />
-            <marker date="1498187212314" expanded="true" signature="2452:2545" ph="SELECT id FR... user_user" />
-            <marker date="1498187212314" expanded="true" signature="2744:2844" ph="UPDATE chat_... " />
-            <marker date="1498187212314" expanded="true" signature="2943:3038" ph="UPDATE chat_... " />
-            <marker date="1498187212314" expanded="true" signature="3118:3238" ph="UPDATE chat_... " />
+            <marker date="1498240306425" expanded="true" signature="75:79" ph="..." />
+            <marker date="1498240306425" expanded="true" signature="114:171" ph="..." />
+            <marker date="1498240306425" expanded="true" signature="914:973" ph="..." />
+            <marker date="1498240306425" expanded="true" signature="1533:1596" ph="..." />
+            <marker date="1498240306425" expanded="true" signature="1858:1891" ph="..." />
           </folding>
         </state>
       </provider>

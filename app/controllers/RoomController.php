@@ -13,7 +13,7 @@ class RoomController extends ChatController
     {
         $id = $param;
         $new = 'false';
-        $room = new Room($this->getDb());
+        $room = new Room();
         if ($room->isExist($id)) {
             if ($room->isNewRoom($id)) {
                 $new = 'true';
@@ -26,17 +26,24 @@ class RoomController extends ChatController
             require APP . 'view/room/room.php';
             die();
         }
+        $this->loadUser();
+        $userLists = $this->userLists;
+        $roomLists = $this->roomLists;
+        $rooms = $this->rooms;
         $this->render('room/room.php', [
+            'rooms' => $rooms,
+            'userLists' => $userLists,
+            'roomLists' => $roomLists,
             'new' => $new,
             'messages' => $messages,
-              'receiver' => $receiver
+            'receiver' => $receiver
         ]);
     }
 
     function roomAjaxPost($param)
     {
         $id = $param;
-        $room = new Room($this->getDb());
+        $room = new Room();
         $room->postRoom($id, $_POST);
     }
 
@@ -44,7 +51,7 @@ class RoomController extends ChatController
     {
         $id = $param;
         $lastShow = $_POST['lastShow'];
-        $room = new Room($this->getDb());
+        $room = new Room();
         $messages = $room->loadMessageRoom($id, $lastShow);
         require APP . 'view/room/message.php';
 
@@ -54,17 +61,17 @@ class RoomController extends ChatController
     {
         $id = $param;
         $firstShow = $_POST['firstShow'];
-        $room = new Room($this->getDb());
+        $room = new Room();
         $messages = $room->loadLastMessageRoom($id, $firstShow);
         require APP . 'view/room/message.php';
 
     }
 
     function roomAjaxCountdown($param)
-    {          
+    {
         $focus = $_POST['focus'];
         $id = $param;
-        $room = new Room($this->getDb());
+        $room = new Room();
         $room->countdownRoom($id, $focus);
     }
 }

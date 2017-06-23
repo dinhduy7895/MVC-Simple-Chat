@@ -2,9 +2,11 @@
 
 class Chat extends Model
 {
+
+
     function refreshUser()
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT username FROM user WHERE id=?");
         $sql->execute(array($_SESSION['id']));
         if ($sql->rowCount() != 0) {
@@ -24,7 +26,7 @@ class Chat extends Model
 
     function loadUserOnline()
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT user.*, sub.count FROM user LEFT JOIN  
 ( SELECT chat_user.sender as name , COUNT(is_read) as count FROM chat_user 
 WHERE chat_user.sender != ? AND is_read = 0 AND user_user_id in 
@@ -38,12 +40,21 @@ GROUP BY chat_user.sender ) as sub ON sub.name = user.id");
 
     function loadRoomAvailable($id)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT room.id, room.name, user_room.is_read  FROM room 
                             INNER JOIN user_room 
                             on room.id = user_room.room_id
                             WHERE user_room.user_id = ?");
         $sql->execute(array($id));
+        $r = $sql->fetchAll();
+        return $r;
+    }
+
+    function loadAllRoom()
+    {
+        $db = $this->db;
+        $sql = $db->prepare("SELECT room.id, room.name FROM room ");
+        $sql->execute();
         $r = $sql->fetchAll();
         return $r;
     }

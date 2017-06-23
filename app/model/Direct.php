@@ -4,7 +4,7 @@ class Direct extends Model
 {
     function isExist($id)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT id FROM user   WHERE user.id = ? ");
         $sql->execute(array($id));
         if ($sql->rowCount() > 0) return true;
@@ -13,7 +13,7 @@ class Direct extends Model
 
     function isNewDirect($id)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT id FROM user_user WHERE (sender = ? and receiver = ?) OR (sender = ? and receiver = ?)");
         $sql->execute(array($id, $_SESSION['id'], $_SESSION['id'], $id));
         if ($sql->rowCount() > 0) return false;
@@ -22,14 +22,14 @@ class Direct extends Model
 
     function newDirect($id)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("INSERT INTO user_user (sender,receiver) VALUES (?,?)");
         $sql->execute(array($id, $_SESSION['id']));
     }
 
     function join($id)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT username FROM user WHERE id = ?");
         $sql->execute(array($id));
         return $sql->fetch();
@@ -37,7 +37,7 @@ class Direct extends Model
 
     function loadMessageDirect($id)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT id FROM user_user WHERE (sender = ? and receiver = ?) OR (sender = ? and receiver = ?)");
         $sql->execute(array($id, $_SESSION['id'], $_SESSION['id'], $id));
         $row = $sql->fetch();
@@ -50,12 +50,21 @@ OR (chat_user.sender != ? AND time_receive > 0))
 ORDER by id ASC ");
         $sql->execute(array($id, $_SESSION['id'], $_SESSION['id']));
         $r = $sql->fetchAll();
+        if(count($r) > 0)
         return $r;
+        else{
+            $sql = $db->prepare("SELECT COUNT(id) as num FROM chat_user WHERE chat_user.user_user_id =  ? AND chat_user.sender = ? AND is_read = 0");
+            $sql->execute(array($id, $_SESSION['id']));
+            $row = $sql->fetch();
+            $id = $row['num'];
+         
+            return $id;
+        }
     }
 
     function postDirect($id, $data)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT id FROM user_user WHERE (sender = ? and receiver = ?) OR (sender = ? and receiver = ?)");
         $sql->execute(array($id, $_SESSION['id'], $_SESSION['id'], $id));
         $row = $sql->fetch();
@@ -69,7 +78,7 @@ ORDER by id ASC ");
 
     function countdownDirect($id, $focus)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT id FROM user_user WHERE (sender = ? and receiver = ?) OR (sender = ? and receiver = ?)");
         $sql->execute(array($id, $_SESSION['id'], $_SESSION['id'], $id));
         $row = $sql->fetch();

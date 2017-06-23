@@ -11,7 +11,7 @@ class DirectController extends ChatController
 
     function chat($param)
     {
-        $direct = new Direct($this->getDb());
+        $direct = new Direct();
         $id = $param;
         if ($direct->isExist($id)) {
             if ($direct->isNewDirect($id)) {
@@ -25,7 +25,14 @@ class DirectController extends ChatController
             require APP . 'view/direct/direct.php';
             die();
         }
+        $this->loadUser();
+        $userLists = $this->userLists;
+        $roomLists = $this->roomLists;
+        $rooms = $this->rooms;
         $this->render('direct/direct.php', [
+            'rooms' => $rooms,
+            'userLists' => $userLists,
+            'roomLists' => $roomLists,
             'messages' => $messages,
             'receiver' => $receiver
         ]);
@@ -34,15 +41,22 @@ class DirectController extends ChatController
     function directAjaxPost($param)
     {
         $id = $param;
-        $direct = new Direct($this->getDb());
+        $direct = new Direct();
         $direct->postDirect($id, $_POST);
     }
 
     function directAjaxMessage($param)
     {
         $id = $param;
-        $direct = new Direct($this->getDb());
+        $direct = new Direct();
         $messages = $direct->loadMessageDirect($id);
+        if(is_numeric($messages)){
+            if ($messages = 0)
+                require APP . 'view/direct/seen.php';
+            else
+                return '';
+        }
+        else
         require APP . 'view/direct/message.php';
 
     }
@@ -50,7 +64,7 @@ class DirectController extends ChatController
     function directAjaxCountdown($param)
     {   $focus = $_POST['focus'];
         $id = $param;
-        $direct = new Direct($this->getDb());
+        $direct = new Direct();
         $direct->countdownDirect($id,$focus);
 
     } 

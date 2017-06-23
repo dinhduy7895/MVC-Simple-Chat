@@ -8,14 +8,11 @@
         <li style="position: absolute;
 
     left: 50%;
-    top: 7%;"><img id="loader" src="<?php echo Image::getImage('show.gif'); ?> " style="width: 50px; height: 50px;" /></li>
-        <div class="msg" title="<?php echo time(); ?>"  style="display: none"></div>
+    top: 7%;"><img id="loader" src="<?php echo Image::getImage('show.gif'); ?> " style="width: 50px; height: 50px; display: none"; /></li>
+        <div class="msg" title="<?php echo 0; ?>" style="display: none;" ></div>
         <?php
         if($new == 'true')require APP.'view/room/join.php';
         else         require APP.'view/room/message.php';
         ?>
     </ol>
 </div>
-<!--<form id="msg_form">-->
-<!--    <input class="textarea" type="text" placeholder="Type here!"/>-->
-<!--</form>-->

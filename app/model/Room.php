@@ -4,7 +4,7 @@ class Room extends Model
 {
     function isExist($id)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT room.name FROM room   WHERE room.id = ? ");
         $sql->execute(array($id));
         return $sql->fetch();
@@ -12,7 +12,7 @@ class Room extends Model
 
     function isNewRoom($id)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT COUNT(id) 
                                 FROM user_room 
                                 WHERE room_id = ? AND user_id = ?");
@@ -24,7 +24,7 @@ class Room extends Model
 
     function loadMessageRoom($id, $lastShow=0)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $query = "SELECT* FROM (SELECT username,avatar, chat_room.* 
         FROM chat_room, user 
         WHERE chat_room.room_id =? 
@@ -39,7 +39,7 @@ class Room extends Model
 
     function loadLastMessageRoom($id, $firstShow)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $sql = $db->prepare("SELECT* FROM (SELECT username,avatar, chat_room.* 
         FROM chat_room, user 
         WHERE chat_room.room_id =? 
@@ -53,7 +53,7 @@ class Room extends Model
 
     function postRoom($id, $data)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         $msg = $data['msg'];
         if ($msg != "") {
             $sql = $db->prepare("INSERT INTO chat_room (sender,message,posted,room_id) VALUES (?,?,NOW(),?)");
@@ -65,7 +65,7 @@ class Room extends Model
 
     function countdownRoom($id, $focus)
     {
-        $db = $this->getDb();
+        $db = $this->db;
         if($focus == 'true'){
             $sql = $db->prepare("UPDATE user_room SET is_read = 1 WHERE user_room.user_id = ? AND user_room.room_id = ?");
             $sql->execute(array( $_SESSION['id'], $id));
