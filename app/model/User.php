@@ -19,6 +19,8 @@ class User extends Model
             $_SESSION['user'] = $row['username'];
             $_SESSION['id'] = $row['id'];
             $_SESSION['avatar'] = $row['avatar'];
+//            var_dump($_SESSION['id']);
+//exit();
             $sql = $db->prepare("UPDATE user SET status=1 WHERE id=?");
             $sql->execute(array($_SESSION['id']));
             return true;

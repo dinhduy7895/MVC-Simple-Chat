@@ -237,10 +237,10 @@ a{
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.07);
 }
 .msg p {
-    font-size: 0.8rem;
+    font-size: 16px;
     margin: 0 0 0.2rem 0;
     color: #777;
-    width: 73em;
+    width: 45em;
     word-wrap: break-word;
 }
 .msg img {
@@ -267,7 +267,7 @@ a{
 }
 
 .msg time {
-    font-size: 0.7rem;
+    font-size: 14px;
     color: #ccc;
     margin-top: 3px;
     float: right;
@@ -388,6 +388,9 @@ footer{
 .online span{
     color: #4cae4c;
 }
-.offline span{
+.ofline span{
     color:#a0a0a0;
+}
+.new-noti span{
+    color:  red ;
 }

@@ -12,9 +12,9 @@ $(".show-status").on("mousedown", function () {
 function getId(name) {
     var url = window.location.href;
     var path = location.protocol + '//' + location.host + '/';
-    url = url.replace(path,'');
+    url = url.replace(path, '');
     var res = url.split('/');
-   var param = [];
+    var param = [];
     param['ctl'] = res[0];
     param['act'] = res[1];
     param['id'] = res[2];
@@ -43,16 +43,24 @@ function reloadUser() {
     url += "Chat/AjaxOnline";
     $.ajax({
         url: url,
-        type : 'Get',
+        type: 'Get',
         data: {
             id: getId('id'),
             type: getId('ctl')
         },
+        async: false,
         success: function (view) {
             $(".list-users").html(view);
             setTimeout(function () {
                 reloadUser();
-            },10000)
+            }, 1000)
+        },
+        complete: function () {
+            var noti = $("#sessionNoti").val();
+            if (noti != 0) {
+                document.title = '(' + noti + ')' + localStorage['title'];
+            }
+            else document.title = localStorage['title'];
         }
     });
 }
@@ -62,33 +70,45 @@ function reload() {
     if (typeof $(".join-room").attr("title") !== 'undefined') {
         return;
     }
-    
-    $.ajax({
-        url : trueUrl("Countdown"),
-            // success : alert('sc'),
-            // error : alert('er')
-    });
-    
     localStorage['lastShow'] = $(".msgs .msg:last").attr("title");
     $.ajax({
         url: trueUrl("Message"),
         success: function (view) {
+
             $(".msgs").html(view);
             if (localStorage['lastShow'] != $(".msgs .msg:last").attr("title")) {
                 doScroll();
             }
-            // setTimeout(function () {
-            //     reload();
-            // },1000)
+            setTimeout(function () {
+                reload();
+            }, 1000)
         }
     });
 }
 
-$(document).ready(function () {
-   //   reload();
-  //  reloadUser();
-    doScroll();
+function reloadUpdate() {
+    var focus = $('#sendmess').is(':focus');
+    $.ajax({
+        url: trueUrl("Countdown"),
+        type: 'Post',
+        data: {
+            focus: focus
+        },
+        success: function (data) {
+            // alert(data);
+            setTimeout(function () {
+                reloadUpdate();
+            }, 1000)
+        }
+    });
 
+}
+$(document).ready(function () {
+    localStorage['title'] = document.title;
+    reloadUser();
+    reload();
+    reloadUpdate();
+    doScroll();
 
     // localStorage['lastId'] = 20;
     //

@@ -48,4 +48,12 @@ class RoomController extends ChatController
         require APP . 'view/room/message.php';
 
     }
+
+    function roomAjaxCountdown($param)
+    {          
+        $focus = $_POST['focus'];
+        $id = $param;
+        $room = new Room($this->getDb());
+        $room->countdownRoom($id, $focus);
+    }
 }

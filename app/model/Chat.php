@@ -25,8 +25,12 @@ class Chat extends Model
     function loadUserOnline()
     {
         $db = $this->getDb();
-        $sql = $db->prepare("SELECT id, status, username FROM user");
-        $sql->execute();
+        $sql = $db->prepare("SELECT user.*, sub.count FROM user LEFT JOIN  
+( SELECT chat_user.sender as name , COUNT(is_read) as count FROM chat_user 
+WHERE chat_user.sender != ? AND is_read = 0 AND user_user_id in 
+(SELECT id FROM user_user WHERE user_user.sender = ? OR user_user.receiver = ?)
+GROUP BY chat_user.sender ) as sub ON sub.name = user.id");
+        $sql->execute(array($_SESSION['id'], $_SESSION['id'], $_SESSION['id']));
         $r = $sql->fetchAll();
         return $r;
 
@@ -35,7 +39,7 @@ class Chat extends Model
     function loadRoomAvailable($id)
     {
         $db = $this->getDb();
-        $sql = $db->prepare("SELECT room.id, room.name FROM room 
+        $sql = $db->prepare("SELECT room.id, room.name, user_room.is_read  FROM room 
                             INNER JOIN user_room 
                             on room.id = user_room.room_id
                             WHERE user_room.user_id = ?");

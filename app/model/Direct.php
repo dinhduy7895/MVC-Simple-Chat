@@ -44,11 +44,11 @@ class Direct extends Model
         $id = $row['id'];
         $sql = $db->prepare("SELECT username,avatar, chat_user.* FROM chat_user, user 
 WHERE chat_user.user_user_id =? 
-AND chat_user.sender = user.username 
+AND chat_user.sender = user.id 
 AND ( ( chat_user.sender = ? AND time_post > 0)
 OR (chat_user.sender != ? AND time_receive > 0))
 ORDER by id ASC ");
-        $sql->execute(array($id, $_SESSION['user'], $_SESSION['user']));
+        $sql->execute(array($id, $_SESSION['id'], $_SESSION['id']));
         $r = $sql->fetchAll();
         return $r;
     }
@@ -63,23 +63,29 @@ ORDER by id ASC ");
         $msg = $data['msg'];
         if ($msg != "") {
             $sql = $db->prepare("INSERT INTO chat_user (sender,message,posted,user_user_id) VALUES (?,?,NOW(),?)");
-            $sql->execute(array($_SESSION['user'], $msg, $id));
+            $sql->execute(array($_SESSION['id'], $msg, $id));
         }
     }
 
-    function countdownDirect($id)
+    function countdownDirect($id, $focus)
     {
         $db = $this->getDb();
         $sql = $db->prepare("SELECT id FROM user_user WHERE (sender = ? and receiver = ?) OR (sender = ? and receiver = ?)");
         $sql->execute(array($id, $_SESSION['id'], $_SESSION['id'], $id));
         $row = $sql->fetch();
         $id = $row['id'];
+        if($focus == 'true' ) {
+            $sql = $db->prepare("UPDATE chat_user SET is_read = 1
+            WHERE user_user_id = ? AND sender != ? AND  is_read = 0");
+            $sql->execute(array($id, $_SESSION['id']));
+        }
         $sql = $db->prepare("UPDATE chat_user SET time_post = time_post -1 
-            WHERE user_user_id = ? AND sender = ? AND  time_post > 0");
-        $sql->execute(array($id, $_SESSION['user']));
+            WHERE  sender = ? AND  time_post > 0");
+        $sql->execute(array($_SESSION['id']));
         $sql = $db->prepare("UPDATE chat_user SET time_receive = time_receive -1 
-            WHERE user_user_id = ? AND sender != ? AND  time_receive > 0");
-        $sql->execute(array($id, $_SESSION['user']));
+            WHERE is_read = 1 AND sender != ? AND  time_receive > 0");
+        $sql->execute(array( $_SESSION['id']));
+
 
     }
 }

@@ -1,5 +1,5 @@
 <form id="msg_form">
-    <input class="textarea" type="text" placeholder="Type here!"/>
+    <input id='sendmess' class="textarea" type="text" placeholder="Type here!"/>
 </form>
 </div>
 <div class="modal fade" id="myModal" role="dialog">

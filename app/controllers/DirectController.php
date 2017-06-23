@@ -48,11 +48,10 @@ class DirectController extends ChatController
     }
 
     function directAjaxCountdown($param)
-    {
-       
+    {   $focus = $_POST['focus'];
         $id = $param;
         $direct = new Direct($this->getDb());
-        $direct->countdownDirect($id);
+        $direct->countdownDirect($id,$focus);
 
     } 
 }

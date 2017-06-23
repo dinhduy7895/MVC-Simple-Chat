@@ -1,3 +1,4 @@
+<?php $_SESSION['noti'] = 0 ;?>
 <!DOCTYPE html>
 <html>
 <head>
