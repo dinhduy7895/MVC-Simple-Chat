@@ -24,5 +24,4 @@ Features :
 + Direct to the different page without reload
 + See your profile and update avatar also your username 
 + Can use sticker when chat
-
- 
++ Display notification when you have new messages 
