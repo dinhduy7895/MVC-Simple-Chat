@@ -2,7 +2,7 @@
 <html >
 <head>
     <meta charset="UTF-8">
-    <title>Tour Manager Login Form</title>
+    <title>Simple Chat Login Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="pen-title">
-    <h1>Tour  Manager Login Form</h1>
+    <h1>Simple Chat Login Form</h1>
     <div class="container">
         <div class="card"></div>
         <div class="card">
@@ -20,7 +20,7 @@
                 echo "<h1>".$_GET['mess']."</h1>";
             }
             ?>
-            <form action="<?php echo URL.'?ctl=Admin&act=signup';?>" method="post">
+            <form action="<?php echo URL.'/Admin/signup';?>" method="post">
                 <div class="input-container">
                     <input type="text"  name="username" required="required"/>
                     <label for="username">Username</label>

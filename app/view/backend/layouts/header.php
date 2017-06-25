@@ -58,13 +58,13 @@
 
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="plugins/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="<?php  echo PATH; ?>plugins/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs"><?php echo $_SESSION['admin']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="plugins/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?php  echo PATH; ?>plugins/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   <?php echo $_SESSION['admin']; ?> - Web Developer
@@ -78,7 +78,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                    <a href="<?php echo URL.'?ctl=Admin&act=logout' ?>" class="btn btn-default btn-flat">Sign out</a>
+                    <a href="<?php echo URL.'/Admin/logout' ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="view">
-            <a class="btn btn-primary" href="<?php echo URL . '?ctl=Admin&act=update&id='.$row['id']; ?>">Update</a>
+            <a class="btn btn-primary" href="<?php echo URL . '/Admin/update/'.$row['id']; ?>">Update</a>
             <a data-toggle="modal" data-target="#myModal" class="btn btn-danger">DELETE </a>
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -17,7 +17,7 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-                            <a  class="action btn btn-default" href="<?php echo URL . '?ctl=Admin&act=delete&id='.$row['id']; ?>"> YES</a>
+                            <a  class="action btn btn-default" href="<?php echo URL . '/Admin/delete/'.$row['id']; ?>"> YES</a>
                         </div>
                     </div>
 

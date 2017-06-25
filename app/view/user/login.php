@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Tour Manager Login Form</title>
+    <title>Simple chat Login Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel='stylesheet prefetch'
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
@@ -12,7 +12,7 @@
 
 <body>
 <div class="pen-title">
-    <h1>Tour Manager Login Form</h1>
+    <h1>Simple Chat Login Form</h1>
 
     <div class="container">
         <div class="card"></div>

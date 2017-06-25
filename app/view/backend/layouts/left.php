@@ -6,7 +6,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="plugins/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?php  echo PATH; ?>plugins/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p><?php echo $_SESSION['admin']; ?></p>
@@ -38,7 +38,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo URL.'?ctl=Admin&act=listUser' ;?>"><i class="fa fa-circle-o"></i> List Users</a></li>
+                    <li><a href="<?php echo URL.'/Admin/listUser' ;?>"><i class="fa fa-circle-o"></i> List Users</a></li>
                 </ul>
             </li>
 
@@ -51,7 +51,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo URL.'?ctl=Room&act=index' ;?>"><i class="fa fa-circle-o"></i> List Room</a></li>
+                    <li><a href="<?php echo URL.'/Room/index' ;?>"><i class="fa fa-circle-o"></i> List Room</a></li>
                     <!--            <li><a href="Price/create.php"><i class="fa fa-circle-o"></i> Create Price</a></li>-->
                 </ul>
             </li>

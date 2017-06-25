@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="update" >
-            <form action="<?php echo URL . '?ctl=Admin&act=create'; ?>" method="post">
+            <form action="<?php echo URL . '/Admin/create'; ?>" method="post">
                 <?php
                 require APP . 'view/backend/admin/_form.php';
                 ?>

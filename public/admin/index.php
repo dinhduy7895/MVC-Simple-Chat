@@ -9,7 +9,7 @@ require APP . 'libs/Image.php';
 require APP . 'framework/route.php';
 require APP . 'framework/controller.php';
 require APP . 'framework/model.php';
-require APP . 'controllers/BaseController.php';
+require APP . 'controllers/backend/BaseController.php';
 
 $route = new Route();
 ?>

@@ -6,7 +6,7 @@ class RoomController extends ChatController
 {
     function index()
     {
-        $this->render('chat/home.php');
+        $this->render('chat/home');
     }
 
     function chat($param)
@@ -20,7 +20,7 @@ class RoomController extends ChatController
             }
             $row = $room->isExist($id);
             $receiver = $row['name'];
-        } else header("Location:" . URL . '?ctl=Room');
+        } else $this->route('Room');
         $messages = $room->loadMessageRoom($id);
         if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
             require APP . 'view/room/room.php';
@@ -30,7 +30,7 @@ class RoomController extends ChatController
         $userLists = $this->userLists;
         $roomLists = $this->roomLists;
         $rooms = $this->rooms;
-        $this->render('room/room.php', [
+        $this->render('room/room', [
             'rooms' => $rooms,
             'userLists' => $userLists,
             'roomLists' => $roomLists,

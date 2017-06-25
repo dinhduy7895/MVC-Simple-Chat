@@ -13,9 +13,8 @@ define("DOMAIN",$_SERVER['HTTP_HOST']);
 define("SUB_FOLDER",dirname($_SERVER['SCRIPT_NAME']));
 define("PROTOCOL","//");
 define("URL",PROTOCOL.DOMAIN.SUB_FOLDER);
-define("PATH",str_replace("index.php","",URL));
-//define("ADMIN_URL", PATH."admin/index.php");
-    
+define("PATH",str_replace("index.php","",URL).DIRECTORY_SEPARATOR);
+
 define('DB_TYPE', 'mysql');
 define('DB_HOST', '127.0.0.1');
 define('DB_NAME', 'Chat');

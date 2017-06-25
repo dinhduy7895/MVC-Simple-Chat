@@ -11,7 +11,7 @@ class ChatController extends BaseController
         $chat = new Chat();
         $userLists = $chat->loadUserOnline();
         $roomLists = $chat->loadRoomAvailable($_SESSION['id']);
-        $this->render('chat/home.php', [
+        $this->render('chat/home', [
             'userLists' => $userLists,
             'roomLists' => $roomLists,
         ]);
@@ -24,7 +24,7 @@ class ChatController extends BaseController
         $userLists = $chat->loadUserOnline();
         $roomLists = $chat->loadRoomAvailable($_SESSION['id']);
         $rooms = $chat->loadAllRoom();
-        $this->render('chat/home.php', [
+        $this->render('chat/home', [
             'rooms' => $rooms,
             'userLists' => $userLists,
             'roomLists' => $roomLists,

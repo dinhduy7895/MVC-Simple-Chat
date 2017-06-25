@@ -28,7 +28,7 @@ class Room extends Model
         $query = "SELECT* FROM (SELECT username,avatar, chat_room.* 
         FROM chat_room, user 
         WHERE chat_room.room_id =? 
-        AND chat_room.sender = user.username 
+        AND chat_room.sender = user.id 
         AND chat_room.id > ?
         ORDER by id DESC LIMIT 0,20) sub ORDER BY id ASC";
         $sql = $db->prepare($query);
@@ -43,7 +43,7 @@ class Room extends Model
         $sql = $db->prepare("SELECT* FROM (SELECT username,avatar, chat_room.* 
         FROM chat_room, user 
         WHERE chat_room.room_id =? 
-        AND chat_room.sender = user.username 
+        AND chat_room.sender = user.id 
         AND chat_room.id < ?
         ORDER BY id DESC LIMIT 0,20) sub ORDER BY id ASC");
         $sql->execute(array($id, $firstShow));

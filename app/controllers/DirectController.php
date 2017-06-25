@@ -6,7 +6,7 @@ class DirectController extends ChatController
 {
     function index()
     {
-        $this->render('chat/home.php');
+        $this->render('chat/home');
     }
 
     function chat($param)
@@ -19,7 +19,7 @@ class DirectController extends ChatController
             }
             $row = $direct->join($id);
             $receiver = $row['username'];
-        } else header("Location:" . URL . '?ctl=Direct');
+        } else $this->route('Direct');
         $messages = $direct->loadMessageDirect($id);
         if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
             require APP . 'view/direct/direct.php';
@@ -29,7 +29,7 @@ class DirectController extends ChatController
         $userLists = $this->userLists;
         $roomLists = $this->roomLists;
         $rooms = $this->rooms;
-        $this->render('direct/direct.php', [
+        $this->render('direct/direct', [
             'rooms' => $rooms,
             'userLists' => $userLists,
             'roomLists' => $roomLists,

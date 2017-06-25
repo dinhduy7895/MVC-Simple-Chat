@@ -15,7 +15,7 @@
             unset($_SESSION['mess']);
         } ?>
         <div class="create">
-            <a class="btn btn-success" href="<?php echo URL . '?ctl=Admin&act=create'; ?>">Create User</a>
+            <a class="btn btn-success" href="<?php echo URL . '/Admin/create'; ?>">Create User</a>
         </div>
         <div class="box">
             <div class="box-header">

@@ -11,22 +11,25 @@ class  Route
     {
         $this->loadScript();
         if (Auth) {
+
             if ($this->controller == null) {
+
                 require APP . 'controllers/backend/AdminController.php';
                 $home = new AdminController();
+
                 if (isset($_SESSION['admin'])) {
+
                     $home->index();
                 } else {
+
                     $home->login();
                 }
             } elseif (file_exists(APP . 'controllers/backend/' . $this->controller . 'Controller.php')) {
-                if (!isset($_SESSION['admin']) && $this->controller != 'Admin') {
-                    header("Location: " . URL . 'User');
-                }
                 require APP . 'controllers/backend/' . $this->controller . 'Controller.php';
                 $this->controller = $this->controller . 'Controller';
                 $this->controller = new $this->controller();
                 if (method_exists($this->controller, $this->action)) {
+                    
                     if (!empty($this->param)) {
                         call_user_func_array(array($this->controller, $this->action), $this->param);
                     } else {
@@ -85,6 +88,8 @@ class  Route
             unset($url['ctl'], $url['act']);
             $this->param = $url;
         }
+//        var_dump($this);
+//        exit();
     }
 
 }

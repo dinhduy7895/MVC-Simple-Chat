@@ -1,16 +1,13 @@
 <?php
 include APP . 'model/User.php';
-include APP . 'controllers/ChatController.php';
+//include APP . 'controllers/backend/BaseController.php';
 
 class AdminController extends BaseController
 {
+
     public function index()
     {
-        require APP . 'view/backend/layouts/header.php';
-        require APP . 'view/backend/layouts/left.php';
-        require APP . 'view/backend/admin/index.php';
-        require APP . 'view/backend/layouts/footer.php';
-
+        $this->render('admin/index');
     }
 
     public function login()
@@ -20,82 +17,86 @@ class AdminController extends BaseController
 
     public function signup()
     {
-        $data = $_POST;
-        $user = new User($this->getDb());
-        $user->signupAdmin($data); 
-        header("Location: " . URL . '?ctl=Admin');
+
+        $user = new User();
+        if (isset($_POST['submit'])) {
+
+           $signup = $user->signupAdmin($_POST);
+            if($signup)
+                $this->route('Admin');
+        }
+        $this->route('Admin');
     }
-    
+
     public function logout()
     {
-        $user = new User($this->getDb());
+        $user = new User();
         $user->logoutAdmin();
-        header("Location: " . URL . '?ctl=Admin&act=login');
+        $this->route('Admin/login');
     }
 
     public function update($id)
-    {        
-        $user = new User($this->getDb());
+    {
+        $user = new User();
         if (!isset($_POST['update'])) {
             $row = $user->find($id);
-            require APP . 'view/backend/layouts/header.php';
-            require APP . 'view/backend/layouts/left.php';
-            require APP . 'view/backend/admin/update.php';
-            require APP . 'view/backend/layouts/footer.php';
+            $this->render('admin/update', [
+                'row' => $row
+            ]);
         }
         $data = $_POST;
         if ($user->find($id))
-        $user->updateAdmin($data,$id);
-        header("Location: " . URL . '?ctl=Admin&act=listUser');
+            $user->updateAdmin($data, $id);
+        $this->route('Admin/listUser');
     }
 
-    public function create(){
-        $user = new User($this->getDb());
+    public function create()
+    {
+        $user = new User();
         if (!isset($_POST['create'])) {
-            require APP . 'view/backend/layouts/header.php';
-            require APP . 'view/backend/layouts/left.php';
-            require APP . 'view/backend/admin/create.php';
-            require APP . 'view/backend/layouts/footer.php';
+            $this->render('admin/create');
+
         }
         $data = $_POST;
         $user->create($data);
-        header("Location: " . URL . '?ctl=Admin&act=listUser');
+        $this->route('Admin/listUser');
     }
-    
-    public function view($id){
-        $user = new User($this->getDb());
+
+    public function view($id)
+    {
+        $user = new User();
         $row = $user->find($id);
-        require APP . 'view/backend/layouts/header.php';
-        require APP . 'view/backend/layouts/left.php';
-        require APP . 'view/backend/admin/view.php';
-        require APP . 'view/backend/layouts/footer.php';
+        $this->render('admin/view', [
+            'row' => $row
+        ]);
     }
-    
+
     public function listUser()
     {
-        $user = new User($this->getDb());
+        $user = new User();
         $rows = $user->all();
-        require APP . 'view/backend/layouts/header.php';
-        require APP . 'view/backend/layouts/left.php';
-        require APP . 'view/backend/admin/listUser.php';
-        require APP . 'view/backend/layouts/footer.php';
+        $this->render('admin/listUser', [
+            'rows' => $rows
+        ]);
     }
 
     public function delete($id)
     {
-        $user = new User($this->getDb());
+        $user = new User();
         $user->delete($id);
         $rows = $user->all();
-        require APP . 'view/backend/layouts/header.php';
-        require APP . 'view/backend/layouts/left.php';
-        require APP . 'view/backend/admin/listUser.php';
-        require APP . 'view/backend/layouts/footer.php';
+        $user = new User();
+        $rows = $user->all();
+        $this->render('admin/listUser', [
+            'rows' => $rows
+        ]);
     }
 
-    public  function search(){
-        $user = new User($this->getDb());
+    public function search()
+    {
+        $user = new User();
         $rows = $user->search($_POST);
         require APP . 'view/backend/admin/table.php';
     }
-    
+
 }
