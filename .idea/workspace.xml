@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85f967af-fedf-4bdf-928b-d835b7119f89" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/img/21.jpg" afterPath="$PROJECT_DIR$/public/admin/img/21.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/img/c6c5e3f3a6e94bb712f8.jpg" afterPath="$PROJECT_DIR$/public/admin/img/c6c5e3f3a6e94bb712f8.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/21.jpg" afterPath="$PROJECT_DIR$/public/img/21.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/Screenshot from 2017-06-14 08-57-51.png" afterPath="$PROJECT_DIR$/public/img/Screenshot from 2017-06-14 08-57-51.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/Selection_168.png" afterPath="$PROJECT_DIR$/public/img/Selection_168.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/show.gif" afterPath="$PROJECT_DIR$/public/img/show.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Chat.sql" afterPath="$PROJECT_DIR$/Chat.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.MD" afterPath="$PROJECT_DIR$/README.MD" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BaseController.php" afterPath="$PROJECT_DIR$/app/controllers/BaseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/backend/BaseController.php" afterPath="$PROJECT_DIR$/app/controllers/backend/BaseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/libs/Emojis.php" afterPath="$PROJECT_DIR$/app/libs/Emojis.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/admin/_form.php" afterPath="$PROJECT_DIR$/app/view/backend/admin/_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/admin/create.php" afterPath="$PROJECT_DIR$/app/view/backend/admin/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/admin/index.php" afterPath="$PROJECT_DIR$/app/view/backend/admin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/admin/listUser.php" afterPath="$PROJECT_DIR$/app/view/backend/admin/listUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/admin/login.php" afterPath="$PROJECT_DIR$/app/view/backend/admin/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/admin/table.php" afterPath="$PROJECT_DIR$/app/view/backend/admin/table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/admin/update.php" afterPath="$PROJECT_DIR$/app/view/backend/admin/update.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/admin/view.php" afterPath="$PROJECT_DIR$/app/view/backend/admin/view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/room/create.php" afterPath="$PROJECT_DIR$/app/view/backend/room/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/room/index.php" afterPath="$PROJECT_DIR$/app/view/backend/room/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/room/update.php" afterPath="$PROJECT_DIR$/app/view/backend/room/update.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/backend/room/view.php" afterPath="$PROJECT_DIR$/app/view/backend/room/view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/direct/seen.php" afterPath="$PROJECT_DIR$/app/view/direct/seen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/home/index.php" afterPath="$PROJECT_DIR$/app/view/home/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin/index.php" afterPath="$PROJECT_DIR$/public/admin/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/Room.php" afterPath="$PROJECT_DIR$/app/model/Room.php" />
     </list>
     <ignored path="MVC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,17 +54,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Room.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Room.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/model/Room.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+            <state relative-caret-position="660">
+              <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
               <folding>
-                <marker date="1498443799117" expanded="true" signature="120:166" ph="SELECT room.... room" />
-                <marker date="1498443799117" expanded="true" signature="331:462" ph="SELECT COUNT... user_room" />
-                <marker date="1498443799117" expanded="true" signature="1731:1805" ph="INSERT INTO chat_room... " />
-                <marker date="1498443799117" expanded="true" signature="1906:2003" ph="UPDATE user_... " />
-                <marker date="1498443799117" expanded="true" signature="2214:2300" ph="UPDATE user_... " />
+                <marker date="1498444457662" expanded="true" signature="120:166" ph="SELECT room.... room" />
+                <marker date="1498444457662" expanded="true" signature="331:462" ph="SELECT COUNT... user_room" />
+                <marker date="1498444457662" expanded="true" signature="1731:1805" ph="INSERT INTO chat_room... " />
+                <marker date="1498444457662" expanded="true" signature="1904:2001" ph="UPDATE user_... " />
+                <marker date="1498444457662" expanded="true" signature="2212:2298" ph="UPDATE user_... " />
               </folding>
             </state>
           </provider>
@@ -101,13 +76,13 @@
             <state relative-caret-position="60">
               <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
               <folding>
-                <marker date="1498443799117" expanded="true" signature="562:574" ph="..." />
+                <marker date="1498444150418" expanded="true" signature="562:574" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/home/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -117,12 +92,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/backend/admin/create.php">
+      <file leaf-file-name="message.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/room/message.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-              <folding />
+              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+              <folding>
+                <marker date="1498444150418" expanded="true" signature="219:379" ph="..." />
+                <marker date="1498444150418" expanded="true" signature="246:336" ph="..." />
+                <marker date="1498444150418" expanded="true" signature="246:379" ph="..." />
+                <marker date="1498444150418" expanded="true" signature="273:331" ph="..." />
+                <marker date="1498444150418" expanded="true" signature="273:336" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -212,10 +193,10 @@
         <option value="$PROJECT_DIR$/app/view/backend/admin/login.php" />
         <option value="$PROJECT_DIR$/app/view/backend/admin/update.php" />
         <option value="$PROJECT_DIR$/app/view/backend/admin/view.php" />
-        <option value="$PROJECT_DIR$/app/model/Room.php" />
         <option value="$PROJECT_DIR$/app/view/user/login.php" />
         <option value="$PROJECT_DIR$/public/plugin/chat.js" />
         <option value="$PROJECT_DIR$/app/view/home/index.php" />
+        <option value="$PROJECT_DIR$/app/model/Room.php" />
       </list>
     </option>
   </component>
@@ -677,12 +658,12 @@
       <workItem from="1497594318321" duration="17007000" />
       <workItem from="1497620140411" duration="69502000" />
       <workItem from="1497975143399" duration="53764000" />
-      <workItem from="1498199928997" duration="29939000" />
+      <workItem from="1498199928997" duration="30358000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190409000" />
+    <option name="totallyTimeSpent" value="190828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -843,9 +824,9 @@
         <state relative-caret-position="15">
           <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
           <folding>
-            <marker date="1498443799117" expanded="true" signature="362:499" ph="..." />
-            <marker date="1498443799117" expanded="true" signature="362:675" ph="..." />
-            <marker date="1498443799117" expanded="true" signature="499:662" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="362:499" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="362:675" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="499:662" ph="..." />
           </folding>
         </state>
       </provider>
@@ -879,19 +860,19 @@
         <state relative-caret-position="980">
           <caret line="81" column="3" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
           <folding>
-            <marker date="1498443799117" expanded="true" signature="122:161" ph="SELECT id FR... user" />
-            <marker date="1498443799117" expanded="true" signature="372:465" ph="SELECT id FR... user_user" />
-            <marker date="1498443799117" expanded="true" signature="712:764" ph="INSERT INTO user_user... " />
-            <marker date="1498443799117" expanded="true" signature="910:948" ph="SELECT usern... user" />
-            <marker date="1498443799117" expanded="true" signature="1120:1213" ph="SELECT id FR... user_user" />
-            <marker date="1498443799117" expanded="true" signature="1376:1611" ph="SELECT usern... chat_user" />
-            <marker date="1498443799117" expanded="true" signature="1808:1921" ph="SELECT COUNT... chat_user" />
-            <marker date="1498443799117" expanded="true" signature="2193:2286" ph="SELECT id FR... user_user" />
-            <marker date="1498443799117" expanded="true" signature="2508:2587" ph="INSERT INTO chat_user... " />
-            <marker date="1498443799117" expanded="true" signature="2772:2865" ph="SELECT id FR... user_user" />
-            <marker date="1498443799117" expanded="true" signature="3064:3164" ph="UPDATE chat_... " />
-            <marker date="1498443799117" expanded="true" signature="3263:3358" ph="UPDATE chat_... " />
-            <marker date="1498443799117" expanded="true" signature="3438:3558" ph="UPDATE chat_... " />
+            <marker date="1498444150418" expanded="true" signature="122:161" ph="SELECT id FR... user" />
+            <marker date="1498444150418" expanded="true" signature="372:465" ph="SELECT id FR... user_user" />
+            <marker date="1498444150418" expanded="true" signature="712:764" ph="INSERT INTO user_user... " />
+            <marker date="1498444150418" expanded="true" signature="910:948" ph="SELECT usern... user" />
+            <marker date="1498444150418" expanded="true" signature="1120:1213" ph="SELECT id FR... user_user" />
+            <marker date="1498444150418" expanded="true" signature="1376:1611" ph="SELECT usern... chat_user" />
+            <marker date="1498444150418" expanded="true" signature="1808:1921" ph="SELECT COUNT... chat_user" />
+            <marker date="1498444150418" expanded="true" signature="2193:2286" ph="SELECT id FR... user_user" />
+            <marker date="1498444150418" expanded="true" signature="2508:2587" ph="INSERT INTO chat_user... " />
+            <marker date="1498444150418" expanded="true" signature="2772:2865" ph="SELECT id FR... user_user" />
+            <marker date="1498444150418" expanded="true" signature="3064:3164" ph="UPDATE chat_... " />
+            <marker date="1498444150418" expanded="true" signature="3263:3358" ph="UPDATE chat_... " />
+            <marker date="1498444150418" expanded="true" signature="3438:3558" ph="UPDATE chat_... " />
           </folding>
         </state>
       </provider>
@@ -909,30 +890,16 @@
         <state relative-caret-position="629">
           <caret line="46" column="55" selection-start-line="43" selection-start-column="29" selection-end-line="46" selection-end-column="55" />
           <folding>
-            <marker date="1498443799117" expanded="true" signature="123:159" ph="SELECT usern... user" />
-            <marker date="1498443799117" expanded="true" signature="280:317" ph="UPDATE user " />
-            <marker date="1498443799117" expanded="true" signature="411:429" ph="SELECT * FRO... user" />
-            <marker date="1498443799117" expanded="true" signature="674:709" ph="UPDATE user " />
-            <marker date="1498443799117" expanded="true" signature="883:1205" ph="SELECT id, s... user" />
-            <marker date="1498443799117" expanded="true" signature="883:1207" ph="SELECT user.... user" />
-            <marker date="1498443799117" expanded="true" signature="932:1176" ph="SELECT chat_... " />
-            <marker date="1498443799117" expanded="true" signature="1446:1611" ph="SELECT room.... room" />
-            <marker date="1498443799117" expanded="true" signature="1446:1667" ph="SELECT room.... room" />
-            <marker date="1498443799117" expanded="true" signature="1850:1885" ph="SELECT room.... room" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/room/message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding>
-            <marker date="1498443799117" expanded="true" signature="219:379" ph="..." />
-            <marker date="1498443799117" expanded="true" signature="246:336" ph="..." />
-            <marker date="1498443799117" expanded="true" signature="246:379" ph="..." />
-            <marker date="1498443799117" expanded="true" signature="273:331" ph="..." />
-            <marker date="1498443799117" expanded="true" signature="273:336" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="123:159" ph="SELECT usern... user" />
+            <marker date="1498444150418" expanded="true" signature="280:317" ph="UPDATE user " />
+            <marker date="1498444150418" expanded="true" signature="411:429" ph="SELECT * FRO... user" />
+            <marker date="1498444150418" expanded="true" signature="674:709" ph="UPDATE user " />
+            <marker date="1498444150418" expanded="true" signature="883:1205" ph="SELECT id, s... user" />
+            <marker date="1498444150418" expanded="true" signature="883:1207" ph="SELECT user.... user" />
+            <marker date="1498444150418" expanded="true" signature="932:1176" ph="SELECT chat_... " />
+            <marker date="1498444150418" expanded="true" signature="1446:1611" ph="SELECT room.... room" />
+            <marker date="1498444150418" expanded="true" signature="1446:1667" ph="SELECT room.... room" />
+            <marker date="1498444150418" expanded="true" signature="1850:1885" ph="SELECT room.... room" />
           </folding>
         </state>
       </provider>
@@ -953,11 +920,11 @@
         <state relative-caret-position="899">
           <caret line="97" column="7" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="7" />
           <folding>
-            <marker date="1498443799117" expanded="true" signature="75:79" ph="..." />
-            <marker date="1498443799117" expanded="true" signature="114:171" ph="..." />
-            <marker date="1498443799117" expanded="true" signature="914:973" ph="..." />
-            <marker date="1498443799117" expanded="true" signature="1533:1596" ph="..." />
-            <marker date="1498443799117" expanded="true" signature="1858:1891" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="75:79" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="114:171" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="914:973" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="1533:1596" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="1858:1891" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1031,29 +998,29 @@
         <state relative-caret-position="-2041">
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
-            <marker date="1498443799117" expanded="true" signature="214:272" ph="SELECT * FRO... user" />
-            <marker date="1498443799117" expanded="true" signature="818:853" ph="UPDATE user " />
-            <marker date="1498443799117" expanded="true" signature="1135:1206" ph="SELECT * FRO... user" />
-            <marker date="1498443799117" expanded="true" signature="2057:2096" ph="SELECT * FRO... user" />
-            <marker date="1498443799117" expanded="true" signature="2300:2386" ph="INSERT INTO user... " />
-            <marker date="1498443799117" expanded="true" signature="2707:2750" ph="SELECT * FRO... user" />
-            <marker date="1498443799117" expanded="true" signature="3381:3416" ph="UPDATE user " />
-            <marker date="1498443799117" expanded="true" signature="3584:3619" ph="SELECT user.... user" />
-            <marker date="1498443799117" expanded="true" signature="3870:3910" ph="UPDATE user " />
-            <marker date="1498443799117" expanded="true" signature="4325:4376" ph="UPDATE user " />
-            <marker date="1498443799117" expanded="true" signature="4735:4790" ph="SELECT id FR... user" />
-            <marker date="1498443799117" expanded="true" signature="5164:5208" ph="UPDATE user " />
-            <marker date="1498443799117" expanded="true" signature="5489:5524" ph="UPDATE user " />
-            <marker date="1498443799117" expanded="true" signature="5852:5909" ph="INSERT INTO user_room... " />
-            <marker date="1498443799117" expanded="true" signature="6046:6109" ph="SELECT user.... user" />
-            <marker date="1498443799117" expanded="true" signature="6259:6288" ph="DELETE FROM " />
-            <marker date="1498443799117" expanded="true" signature="6702:6741" ph="SELECT * FRO... user" />
-            <marker date="1498443799117" expanded="true" signature="6945:7044" ph="INSERT INTO user... " />
-            <marker date="1498443799117" expanded="true" signature="7617:7684" ph="SELECT user.... user" />
-            <marker date="1498443799117" expanded="true" signature="7617:7703" ph="SELECT user.... user" />
-            <marker date="1498443799117" expanded="true" signature="7617:7704" ph="SELECT user.... user" />
-            <marker date="1498443799117" expanded="true" signature="7617:7712" ph="SELECT user.... user" />
-            <marker date="1498443799117" expanded="true" signature="7617:7714" ph="SELECT user.... user" />
+            <marker date="1498444150418" expanded="true" signature="214:272" ph="SELECT * FRO... user" />
+            <marker date="1498444150418" expanded="true" signature="818:853" ph="UPDATE user " />
+            <marker date="1498444150418" expanded="true" signature="1135:1206" ph="SELECT * FRO... user" />
+            <marker date="1498444150418" expanded="true" signature="2057:2096" ph="SELECT * FRO... user" />
+            <marker date="1498444150418" expanded="true" signature="2300:2386" ph="INSERT INTO user... " />
+            <marker date="1498444150418" expanded="true" signature="2707:2750" ph="SELECT * FRO... user" />
+            <marker date="1498444150418" expanded="true" signature="3381:3416" ph="UPDATE user " />
+            <marker date="1498444150418" expanded="true" signature="3584:3619" ph="SELECT user.... user" />
+            <marker date="1498444150418" expanded="true" signature="3870:3910" ph="UPDATE user " />
+            <marker date="1498444150418" expanded="true" signature="4325:4376" ph="UPDATE user " />
+            <marker date="1498444150418" expanded="true" signature="4735:4790" ph="SELECT id FR... user" />
+            <marker date="1498444150418" expanded="true" signature="5164:5208" ph="UPDATE user " />
+            <marker date="1498444150418" expanded="true" signature="5489:5524" ph="UPDATE user " />
+            <marker date="1498444150418" expanded="true" signature="5852:5909" ph="INSERT INTO user_room... " />
+            <marker date="1498444150418" expanded="true" signature="6046:6109" ph="SELECT user.... user" />
+            <marker date="1498444150418" expanded="true" signature="6259:6288" ph="DELETE FROM " />
+            <marker date="1498444150418" expanded="true" signature="6702:6741" ph="SELECT * FRO... user" />
+            <marker date="1498444150418" expanded="true" signature="6945:7044" ph="INSERT INTO user... " />
+            <marker date="1498444150418" expanded="true" signature="7617:7684" ph="SELECT user.... user" />
+            <marker date="1498444150418" expanded="true" signature="7617:7703" ph="SELECT user.... user" />
+            <marker date="1498444150418" expanded="true" signature="7617:7704" ph="SELECT user.... user" />
+            <marker date="1498444150418" expanded="true" signature="7617:7712" ph="SELECT user.... user" />
+            <marker date="1498444150418" expanded="true" signature="7617:7714" ph="SELECT user.... user" />
           </folding>
         </state>
       </provider>
@@ -1087,7 +1054,7 @@
         <state relative-caret-position="749">
           <caret line="80" column="52" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
           <folding>
-            <marker date="1498443799117" expanded="true" signature="3280:3320" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="3280:3320" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1164,20 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Room.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-          <folding>
-            <marker date="1498443799117" expanded="true" signature="120:166" ph="SELECT room.... room" />
-            <marker date="1498443799117" expanded="true" signature="331:462" ph="SELECT COUNT... user_room" />
-            <marker date="1498443799117" expanded="true" signature="1731:1805" ph="INSERT INTO chat_room... " />
-            <marker date="1498443799117" expanded="true" signature="1906:2003" ph="UPDATE user_... " />
-            <marker date="1498443799117" expanded="true" signature="2214:2300" ph="UPDATE user_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/plugin/chat.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
@@ -1191,7 +1144,7 @@
         <state relative-caret-position="60">
           <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding>
-            <marker date="1498443799117" expanded="true" signature="562:574" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="562:574" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1201,6 +1154,34 @@
         <state relative-caret-position="75">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/room/message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <marker date="1498444150418" expanded="true" signature="219:379" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="246:336" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="246:379" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="273:331" ph="..." />
+            <marker date="1498444150418" expanded="true" signature="273:336" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Room.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+          <folding>
+            <marker date="1498444457662" expanded="true" signature="120:166" ph="SELECT room.... room" />
+            <marker date="1498444457662" expanded="true" signature="331:462" ph="SELECT COUNT... user_room" />
+            <marker date="1498444457662" expanded="true" signature="1731:1805" ph="INSERT INTO chat_room... " />
+            <marker date="1498444457662" expanded="true" signature="1904:2001" ph="UPDATE user_... " />
+            <marker date="1498444457662" expanded="true" signature="2212:2298" ph="UPDATE user_... " />
+          </folding>
         </state>
       </provider>
     </entry>
